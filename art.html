@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let i = 1; i <= numberOfImages; i++) {
         const imgElement = document.createElement("img");
-        imgElement.src = `${imageDirectory}${i}.png`; // Adjust the file extension if needed
+        imgElement.src = `${imageDirectory}${i}.png`|| `${imageDirectory}${i}.PNG`;
         imgElement.alt = `Image ${i}`;
 
         const galleryItem = document.createElement("div");
