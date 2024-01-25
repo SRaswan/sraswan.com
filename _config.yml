@@ -1,22 +1,18 @@
-# Setup
-title:               Shaurya Raswan
-tagline:             'Shaurya Raswan's Portfolio'
-description:         ''
-url:                 http://lanyon.getpoole.com
-baseurl:             ''
-paginate:            5
-permalink:           pretty
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Shaurya Raswan" # the name of your site, e.g. ACME Corp.
 
-# About/contact
-author:
-  name:              Shaurya Raswan
-  url:               https://github.com/SRaswan
-  email:             sraswan@ucsd.edu
-
-# Gems
 plugins:
-  - jekyll-paginate
+  - jekyll-postcss
+  - jekyll-feed
 
-# Custom vars
-version:             1.1.0
-google_analytics_id: #UA-XXXX-Y
+postcss:
+  cache: false
+
+
+theme: minima
+
+collections:
+  pages:
+    output: true
+

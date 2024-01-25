@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="{{ site.lang | default: 'en-US' }}">
 
-  {% include head.html %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap" rel="stylesheet">
 
-  <body>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <title>{{ page.title | default: site.title }}</title>
+
+</head>
+
+<body>
+  
+<div class="container">
+  <div class="px-4" id="menu">
 
     {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
-        {{ content }}
-      </div>
+    <div class="content px-12 py-4" id="dynamic-content">
+      <h2>{{ page.title | default: "Main Content" }}</h2>
+      {{ content }}
     </div>
+  </div>
+</div>
+<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../assets/js/pdfobject.js"></script>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script src='{{ site.baseurl }}/public/js/script.js'></script>
-  </body>
+
+</body>
+
 </html>
