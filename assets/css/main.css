@@ -12,9 +12,12 @@ body {
   font-family: 'Literata', Helvetica, sans-serif;
 }
 
-/* .container {
-  display: flex
-} */
+#fixed-links {
+  position: fixed;
+  bottom: 0;
+  opacity: 70%;
+  z-index: 2;
+}
 
 #menu {  
   align-items: start;
@@ -77,7 +80,7 @@ body {
     rgba(0, 0, 0, 0.917) 40%
     transparent 9%
   ); */
-  opacity: 0.6;
+  opacity: 0.85;
   background-image: linear-gradient(#e66465, #9198e5);
   background-position: 0% 0%;
   background-size: 12vmin 12vmin;
