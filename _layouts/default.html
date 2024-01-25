@@ -19,8 +19,8 @@
 
     {% include sidebar.html %}
 
-    <div class="content px-12 py-4" id="dynamic-content">
-      <h2>{{ page.title | default: "Main Content" }}</h2>
+    <div class="content py-4">
+      <h2 class="pb-4">{{ page.title | default: "Main Content" }}</h2>
       {{ content }}
     </div>
   </div>

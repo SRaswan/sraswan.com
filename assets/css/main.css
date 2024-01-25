@@ -12,16 +12,15 @@ body {
   font-family: 'Literata', Helvetica, sans-serif;
 }
 
-.containder {
+/* .container {
   display: flex
-}
+} */
 
 #menu {  
   align-items: start;
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
   position: relative;
 
 }
@@ -29,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 15%;
   z-index: 2;
 }
 
@@ -71,16 +71,19 @@ body {
 
 
 #menu-background-pattern {
-  
+/*   
   background-image: linear-gradient(
-    rgba(0, 50, 119, 0.917) 9%, 
+    rgba(0, 50, 119, 0.917) 60%, 
+    rgba(0, 0, 0, 0.917) 40%
     transparent 9%
-  );
+  ); */
+  opacity: 0.6;
+  background-image: linear-gradient(#e66465, #9198e5);
   background-position: 0% 0%;
   background-size: 12vmin 12vmin;
-  height: 100vh;
+  height: 100%;
   left: 0px;
-  position: absolute;
+  position: fixed;
   top: 0px;
   transition: opacity 800ms ease, 
     background-size 800ms ease,
@@ -92,11 +95,6 @@ body {
 #menu-items:hover ~ #menu-background-pattern {
   background-size: 11vmin 11vmin;
   opacity: 0.5;
-}
-
-#menu-items:hover ~ #menu-background-image {
-  background-size: 100vmax;
-  opacity: 0.1;
 }
 
 #menu-items:hover > .menu-item {
@@ -113,3 +111,4 @@ body {
   text-decoration: none;
   transition: opacity 400ms ease;
 }
+.pdfobject-container { width: 60rem; height: 70rem; border: 1rem solid rgba(0,0,0,.1); }
