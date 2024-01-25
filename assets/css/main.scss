@@ -1,0 +1,118 @@
+---
+---
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+
+body {
+  color: white;
+  background-color: rgb(20, 20, 20);
+  margin: 0px;
+  font-family: 'Literata', Helvetica, sans-serif;
+}
+
+#fixed-links {
+  position: fixed;
+  bottom: 0;
+  opacity: 70%;
+  z-index: 2;
+}
+
+#menu {  
+  align-items: start;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+}
+#menu-items {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 15%;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Higher than the sidebar z-index */
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 60%;
+}
+
+
+#menu-background-pattern {
+/*   
+  background-image: linear-gradient(
+    rgba(0, 50, 119, 0.917) 60%, 
+    rgba(0, 0, 0, 0.917) 40%
+    transparent 9%
+  ); */
+  opacity: 0.88;
+  background-image: linear-gradient(#e66465, #9198e5);
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  transition: opacity 800ms ease, 
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100vw;
+  z-index: 1;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1; 
+}
+
+.menu-item {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  transition: opacity 400ms ease;
+}
+.pdfobject-container { width: 60rem; height: 70rem; border: 1rem solid rgba(0,0,0,.1); }
