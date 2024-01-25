@@ -121,6 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-feed
   jekyll-postcss
   minima
   webrick

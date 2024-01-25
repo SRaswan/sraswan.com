@@ -1,11 +1,9 @@
 ---
 ---
-{}
-@import "tailwindcss/base";
 
-@import "tailwindcss/components";
-
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
 
 
 body {
@@ -83,7 +81,7 @@ body {
     rgba(0, 0, 0, 0.917) 40%
     transparent 9%
   ); */
-  opacity: 0.85;
+  opacity: 0.88;
   background-image: linear-gradient(#e66465, #9198e5);
   background-position: 0% 0%;
   background-size: 12vmin 12vmin;
