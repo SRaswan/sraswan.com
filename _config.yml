@@ -1,5 +1,5 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "sraswan.com" # the subpath of your site, e.g. /blog
 title: "Shaurya Raswan" # the name of your site, e.g. ACME Corp.
 email: sraswan@ucsd.edu
 plugins:
