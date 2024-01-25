@@ -1,0 +1,59 @@
+---
+layout: default
+title: "Art"
+permalink: /art
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+
+.gallery-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.gallery-item {
+    width: 32%; /* Adjust the width based on your preference */
+    margin: 5px;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="gallery-container" id="gallery-container"></div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryContainer = document.getElementById("gallery-container");
+
+    // Replace "images" with the path to your image directory
+    const imageDirectory = "../assets/png/";
+
+    // Replace 20 with the number of images you have
+    const numberOfImages = 20;
+
+    for (let i = 1; i <= numberOfImages; i++) {
+        const imgElement = document.createElement("img");
+        imgElement.src = `${imageDirectory}${i}.png`; // Adjust the file extension if needed
+        imgElement.alt = `Image ${i}`;
+
+        const galleryItem = document.createElement("div");
+        galleryItem.classList.add("gallery-item");
+        galleryItem.appendChild(imgElement);
+
+        galleryContainer.appendChild(galleryItem);
+    }
+});
+
+</script>
+</body>
+</html>
