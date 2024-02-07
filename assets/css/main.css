@@ -46,7 +46,7 @@ body {
 }
 
 #menu[data-active-index="1"] > #menu-background-pattern {
-  background-position: 0% -3240%;
+  background-position: 00% -3240%;
 }
 
 #menu[data-active-index="2"] > #menu-background-pattern {
@@ -76,7 +76,7 @@ body {
 }
 
 #menu-items:hover ~ #menu-background-pattern {
-  background-size: 96.5% 96.5%;
+  background-size: 98.2% 97%;
   opacity: 0.5;
 }
 
