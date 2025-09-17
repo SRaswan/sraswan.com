@@ -1,20 +1,37 @@
-<div class="navbar">
-  <h1 class="logo">{{ title() }}</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      <li><a routerLink="/art" routerLinkActive="active">Art</a></li>
-      <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-      <li><a routerLink="/resume" routerLinkActive="active">Resume</a></li>
-    </ul>
-  </nav>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a1a1a;">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">{{ title() }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/art" routerLinkActive="active">Art</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/resume" routerLinkActive="active">Resume</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
 
-<footer class="footer">
-  <p>&copy; 2024 {{ title() }}. All rights reserved.</p>
+<footer class="footer mt-auto">
+  <div class="container">
+    <p class="mb-0">&copy; 2024 {{ title() }}. All rights reserved.</p>
+  </div>
 </footer>
