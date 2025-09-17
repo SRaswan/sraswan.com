@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "personal-website:build:production"
+              "buildTarget": "sraswan-com:build:production"
             },
             "development": {
-              "buildTarget": "personal-website:build:development"
+              "buildTarget": "sraswan-com:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,5 +88,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
