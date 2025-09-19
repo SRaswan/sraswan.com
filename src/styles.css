@@ -1,4 +1,5 @@
 /* Global styles for dark theme */
+
 * {
   box-sizing: border-box;
 }
@@ -9,22 +10,16 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
+  font-family: 'Ibarra Real Nova', serif;
+  line-height: 1.4;
   height: 100%;
   background-color: var(--bs-dark) !important;
   color: var(--bs-light) !important;
 }
 
-/* Force Bootstrap dark theme */
 [data-bs-theme="dark"] {
   --bs-body-color: #dee2e6;
   --bs-body-bg: #212529;
-}
-
-/* Custom dark theme overrides */
-.navbar-dark {
-  background-color: #1a1a1a !important;
 }
 
 .card {
@@ -79,3 +74,20 @@ body {
   background-color: #1a1a1a !important;
   color: #e2e8f0 !important;
 }
+
+
+/* .nav-link.active {
+  font-weight: 600;
+  color: white;
+}
+
+.nav-link.active::before {
+  content: "꩜";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+} */

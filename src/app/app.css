@@ -10,6 +10,7 @@ html[data-bs-theme="dark"] body {
 .main-content {
   min-height: calc(100vh - 120px);
   padding: 2rem 0;
+  z-index: 2;
 }
 
 /* Footer styling to match dark theme */
@@ -19,4 +20,154 @@ html[data-bs-theme="dark"] body {
   text-align: center;
   padding: 1rem 0;
   margin-top: auto;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  margin: 0px;
+}
+
+#menu {  
+  /* align-items: center; */
+  display: flex;
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+#menu-items {
+  /* margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative; */
+  z-index: 2;
+    font-size: large;
+
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% 236%;
+}
+
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% 219%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% 202%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% 185%;
+}
+
+#menu[data-active-index="4"] > #menu-background-pattern {
+  background-position: 0% 168%;
+}
+
+#menu[data-active-index="5"] > #menu-background-pattern {
+  background-position: 0% 150%;
+}
+
+
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 58%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 61%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 64%;
+}
+
+#menu[data-active-index="4"] > #menu-background-image {
+  background-position: center 67%;
+}
+
+#menu[data-active-index="5"] > #menu-background-image {
+  background-position: center 70%;
+}
+
+
+#menu-background-pattern {
+  opacity: 0.7;
+  background-image: url('/imgs/moon.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 40vmin;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  transition: opacity 800ms ease, background-position 200ms ease;
+}
+
+#menu-background-image {
+  background-image: url('/imgs/map.png');
+    filter: invert(100%);
+  background-repeat: repeat-y;
+  background-position: center 40%;
+  background-size: 100vmax;
+  height: 100%;
+  left: 0px;  
+  opacity: 0.1;
+  position: fixed;
+  top: 0px;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100%;
+  z-index: 0;
+}
+
+
+#menu-items:hover ~ #menu-background-pattern {
+  /* background-size: 19vmax; */
+  opacity: 0.9;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 97vmax;
+  opacity: 0.12;
+}
+
+#menu-items:hover > .nav-item {
+  opacity: 0.7;
+}
+
+#menu-items:hover > .nav-item:hover {
+  opacity: 1;
+}
+
+.nav-item {
+  color: white;
+  cursor: pointer;
+  display: block;
+  /* font-size: clamp(3rem, 8vw, 8rem); */
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  text-decoration: none;
+  transition: opacity 700ms ease;
+}
+
+.nav-link.active::before {
+  content: "꩜";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.nav-link.active {
+  font-weight: 600;
+  color: white;
 }
