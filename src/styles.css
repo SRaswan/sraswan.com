@@ -10,10 +10,12 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Ibarra Real Nova', serif;
+  font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.4;
   height: 100%;
   background-color: var(--bs-dark) !important;
+    /* background-color: #0c46aa !important; */
+
   color: var(--bs-light) !important;
 }
 
@@ -21,6 +23,8 @@ body {
   --bs-body-color: #dee2e6;
   --bs-body-bg: #212529;
 }
+
+
 
 .card {
   background-color: #2d3748 !important;
@@ -75,6 +79,13 @@ body {
   color: #e2e8f0 !important;
 }
 
+body a:hover {
+  color: #c1a9ff;
+}
+body a, a:visited, a:active {
+  color: inherit;
+    text-decoration: none;
+}
 
 /* .nav-link.active {
   font-weight: 600;
