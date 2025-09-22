@@ -1,16 +1,47 @@
-.container {
-  column-count: 3;
+.art-grid {
   column-gap: 1rem;
+  column-count: 1;
+  padding: 0 0.5rem;
 }
 
-.col-lg-4 {
+/* responsive column counts */
+@media (min-width: 576px) {
+  .art-grid { column-count: 2; }
+}
+@media (min-width: 992px) {
+  .art-grid { column-count: 3; }
+}
+
+.art-item {
   display: inline-block;
   width: 100%;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+  /* avoid breaking inside columns */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 
-.bg-image img {
+.thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.thumb img {
   width: 100%;
   height: auto;
   display: block;
 }
+
+/* subtle overlay on hover */
+.thumb .mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,255,255,0);
+  transition: background-color 160ms ease-in-out;
+}
+.art-item:hover .thumb .mask { background-color: rgba(255,255,255,0.06); }
+
+/* Optional debug outlines - uncomment to visualize boxes */
+/* .art-item { outline: 1px dashed rgba(0,0,0,0.08); } */

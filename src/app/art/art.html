@@ -1,17 +1,12 @@
-
-<!-- Grid -->
-<div class="container m-3" *ngIf="items.length">
-  <div class="row g-4">
-    <div class="col-lg-4 col-md-6" *ngFor="let it of items">
-      <div class="h-100 shadow-sm">
-        <div class="bg-image hover-overlay ripple rounded" (click)="open(it)" role="button">
-          <img [src]="it.filename" class="w-100" [alt]="it.filename" />
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-        </div>
-      </div>
+<!-- CSS column-based masonry grid -->
+<section class="art-grid m-3" *ngIf="items.length">
+  <article class="art-item" *ngFor="let it of items" (click)="open(it)" role="button">
+    <div class="thumb shadow-sm rounded">
+      <img [src]="it.filename" [alt]="it.filename" />
+      <div class="mask" aria-hidden="true"></div>
     </div>
-  </div>
-</div>
+  </article>
+</section>
 
 <!-- Modal (single reusable) -->
 <div class="modal fade" id="artModal" tabindex="-1" aria-hidden="false">
