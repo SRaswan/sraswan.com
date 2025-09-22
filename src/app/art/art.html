@@ -1,5 +1,5 @@
 <!-- CSS column-based masonry grid -->
-<section class="art-grid m-3" *ngIf="items.length">
+<section class="art-grid m-4" *ngIf="items.length">
   <article class="art-item" *ngFor="let it of items" (click)="open(it)" role="button">
     <div class="thumb shadow-sm rounded">
       <img [src]="it.filename" [alt]="it.filename" />

@@ -33,7 +33,8 @@
   position: relative; */
   z-index: 2;
     font-size: large;
-
+  font-family: Garamond, serif;
+/* letter-spacing: 0.5px;   */
 }
 
 #menu[data-active-index="0"] > #menu-background-pattern {
@@ -133,7 +134,7 @@
 }
 
 #menu-items:hover > .nav-item {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 #menu-items:hover > .nav-item:hover {

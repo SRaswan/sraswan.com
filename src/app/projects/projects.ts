@@ -1,11 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { DatePipe } from '@angular/common';
+
+export interface ProjectsFile {
+  lastUpdated?: string;
+  items: Project[];
+}
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
+export interface Project {
+  title: string;
+  skills: string[];
+  description: string;
+  image: string;
+  blogUrl?: string;
+  links?: ProjectLink[];
+}
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterLink, DatePipe],
   templateUrl: './projects.html',
-  styleUrl: './projects.css'
-})
-export class Projects {
+  styleUrls: ['./projects.css']
 
+})
+export class Projects implements OnInit {
+  projects: Project[] = [];
+  loading = true;
+  error?: string;
+  projectsFile?: ProjectsFile;
+  updatedAt?: Date;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<ProjectsFile>('/projects.json').subscribe({
+        next: data => {
+          this.projectsFile = data;
+          this.projects = data.items || [];
+          this.updatedAt = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+          this.loading = false;
+          console.log(this.projects);
+        },
+        error: () => { this.error = 'Failed to load projects'; this.loading = false; }
+      });
+  }
 }

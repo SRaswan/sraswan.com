@@ -1,7 +1,11 @@
-<div class="container my-2">
+<div class="container my-0 p-0">
     <div class="row">
+
       <div class="col-11 text-center mx-auto">
-        <iframe class="py-3" src="resumes/9-21-25.pdf" width="100%" height="1150px" style="border: none;"></iframe>
+            <div class="text-secondary lead fs-6 m-0">
+      Updated {{ updatedAt | date:'medium' }}
+    </div>
+        <iframe class="py-1" [src]="pdfUrl" width="100%" height="1150px" style="border: none;"></iframe>
       </div>
     </div>
   <div class="row">
@@ -73,7 +77,7 @@
       
       <!-- Download Button -->
       <div class="text-center">
-        <a href="resumes/9-21-25.pdf" class="btn btn-primary btn-lg">📄 Download PDF Resume</a>
+        <a [href]="pdfUrl" class="btn btn-primary btn-lg">📄 Download PDF Resume</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,26 @@
+.tech-tag {
+  background-color: #4a5568;
+  color: #e2e8f0;
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+}
+
+.btn-primary {
+  color: #e2e8f0;
+  background-color: #3182ce;
+  border-color: #3182ce;
+}
+
+.btn-outline-secondary {
+  color: #e2e8f0;
+  border-color: #e2e8f0;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}

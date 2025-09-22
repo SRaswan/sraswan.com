@@ -1,0 +1,94 @@
+{
+"lastUpdated": "2025-09-22T00:58:00Z",
+"items": [
+  {
+    "title": "SignSight: ASL Translator with Computer Vision",
+    "skills": ["React Native", "TensorFlow", "LSTM","OpenCV", "Flask", "MediaPipe"],
+    "description": "1st place Winner at CruzHacks 2024. Mobile app that translates American Sign Language (ASL) using computer vision and LSTMs. Trained and recorded dataset ourselves!",
+    "image": "proj/signsight.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "News", "url": "https://www.santacruzworks.org/news/signsight-a-computer-vision-asl-translator" },
+      { "label": "GitHub", "url": "https://github.com/Ben8176/holdit" },
+      { "label": "Devpost", "url": "https://devpost.com/software/holdit-1b2d9n" }
+
+    ]
+  },
+    {
+    "title": "IsaBunny",
+    "skills": ["SystemVerilog", "Python", "Architecture", "Digital Logic", "QuestaSim", "ModelSim"],
+    "description": "9-bit CPU for IEEE 16 bit floating point type conversion and arithmetic operations. Designed custom ISA that only 'jumps forward.' Simulated with ModelSim and assembler in Python.",
+    "image": "proj/cpu.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/SRaswan/bunny/tree/main" }
+
+    ]
+  },
+        {
+    "title": "Snek2",
+    "skills": ["Rust", "LLVM-IR", "x86 Assembly", "AST", "Register Alloc", "Fusion", "DFA"],
+    "description": "Compiler for a Python-like language with type inference, closures, and first-class functions. Compiles to x86 assembly via LLVM-IR.",
+    "image": "proj/snake.png",
+    "blogUrl": "",
+    "links": [
+    ]
+  },
+        {
+    "title": "Toopy",
+    "skills": ["C", "C++", "OpenCL", "CNN", "CLBlast", "GEMM Kernels", "im2col"],
+    "description": "CNNs written from scratch in C/C++ and OpenCL. Implemented im2col for memory coalescing and CLBlast Batched GEMM.",
+    "image": "proj/im2col.png",
+    "blogUrl": "",
+    "links": [
+
+    ]
+  },
+
+      {
+    "title": "FishSense AutoLabel",
+    "skills": ["Rust", "OpenCV", "Geo", "Linear Algebra", "Computer Vision", "Convex Hulls", "Research"],
+    "description": "Automated low-latency head tail labeling tool for diverse fish images. Convex hull + shape analysis for fish detection, with accuracy + speed metrics.",
+    "image": "proj/fish.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/SRaswan/bunny/tree/main" }
+
+    ]
+  },
+  {
+    "title": "SigPytch",
+    "skills": ["LSTM", "Financial metrics", "DCF", "Python", "Pandas"],
+    "description": "Open source PyPi Python library for financial forcasting and metrics. Used to support our student-led investment fund and their pitches to CFA judges on stock analysis.",
+    "image": "proj/rolling.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "PyPi", "url": "https://pypi.org/project/sigpytch/" },
+      { "label": "GitHub", "url": "https://github.com/SRaswan/sigpytch" }
+
+
+    ]
+  },
+        {
+    "title": "On-site vs Off-site Solar at UCSD",
+    "skills": ["Python", "Excel", "Field Work", "Data Analysis", "Student Engagement", "Research"],
+    "description": "Bonnie Reiss Fellowship for exploring solar cost and production at UCSD for the 2024 Salas O'Brien study.",
+    "image": "proj/windmill.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "Poster", "url": "https://drive.google.com/file/d/1PYOB8MxL5rhbnW73STBZsLm-UZwFMUUN/view?usp=sharing" }
+
+    ]
+  },
+  {
+    "title": "Eutrophication in Orange County: LEGO Spectrophotometer",
+    "skills": ["ImageJ", "Spectrophotometry", "Field Work", "Data Analysis", "Research"],
+    "description": "1st place for Beckman Legacy Award scholarship. LEGO-based spectrophotometer for measuring water quality in OC.",
+    "image": "proj/plants.png",
+    "links": [
+      { "label": "News", "url": "https://iusd.org/article/iusd-students-receive-five-six-beckman-legacy-awards"}
+    ]
+    }
+
+]
+}

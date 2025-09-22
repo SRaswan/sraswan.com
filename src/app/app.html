@@ -39,32 +39,29 @@
 
   <!-- Offcanvas (mobile only) -->
   <div class="offcanvas offcanvas-start bg-dark text-white d-lg-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-                      <div id="menu-background-image" style="z-index: -1;"></div>
+      <div id="menu-background-image" style="z-index: -1;"></div>
 
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Shaurya</h5>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body ">
 
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-white fs-5" (click)="setActiveIndex(0)" routerLink="/about" data-bs-dismiss="offcanvas">Shaurya</a>
+          <a class="nav-link text-white" routerLink="/about" routerLinkActive="active" data-bs-dismiss="offcanvas">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" (click)="setActiveIndex(1)" routerLink="/about" routerLinkActive="active" data-bs-dismiss="offcanvas">About</a>
+          <a class="nav-link text-white" routerLink="/resume" routerLinkActive="active" data-bs-dismiss="offcanvas">Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" (click)="setActiveIndex(2)" routerLink="/resume" routerLinkActive="active" data-bs-dismiss="offcanvas">Resume</a>
+          <a class="nav-link text-white" routerLink="/projects" routerLinkActive="active" data-bs-dismiss="offcanvas">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" (click)="setActiveIndex(3)" routerLink="/projects" routerLinkActive="active" data-bs-dismiss="offcanvas">Projects</a>
+          <a class="nav-link text-white" routerLink="/art" routerLinkActive="active" data-bs-dismiss="offcanvas">Art</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" (click)="setActiveIndex(4)" routerLink="/art" routerLinkActive="active" data-bs-dismiss="offcanvas">Art</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" (click)="setActiveIndex(5)" routerLink="/blog" routerLinkActive="active" data-bs-dismiss="offcanvas">Blog</a>
+          <a class="nav-link text-white" routerLink="/blog" routerLinkActive="active" data-bs-dismiss="offcanvas">Blog</a>
         </li>
 
       </ul>

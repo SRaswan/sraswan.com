@@ -41,7 +41,7 @@ ul li .social{
 ul li a .icon {
   position: relative;
   color: #262626;
-  transition: .5s;
+  transition: .3s;
   z-index: 3;
 }
 
@@ -58,7 +58,7 @@ ul li .social:before {
   width: 100%;
   height: 100%;
   background: rgb(45, 42, 42);
-  transition: .5s;
+  transition: .3s;
   z-index: 2;
 }
 

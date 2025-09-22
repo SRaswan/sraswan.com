@@ -7,10 +7,37 @@
     "filename": "art/seen.png",
     "include": true
   },
+
+    {
+    "filename": "art/corridor.png",
+    "include": true
+  },
+    {
+    "filename": "art/hole.png",
+    "include": true
+  },
+        {
+    "filename": "art/Tourniquet.png",
+    "include": true
+  },
+    {
+    "filename": "art/tape.png",
+    "include": true
+  },
       {
+    "filename": "art/fear.png",
+    "include": true
+  },
+          {
         "filename": "art/red.png",
         "include": true
     },
+          {
+        "filename": "art/Sailor.png",
+        "include": true
+    },
+
+
   {
     "filename": "art/seen1.png",
     "include": true
@@ -23,8 +50,16 @@
         "filename": "art/fall.png",
         "include": true
     },
+          {
+    "filename": "art/web.png",
+    "include": true
+  },
     {
         "filename": "art/jazz.png",
+        "include": true
+    },
+        {
+        "filename": "art/post.png",
         "include": true
     },
     {
