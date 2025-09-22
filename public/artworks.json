@@ -1,0 +1,45 @@
+[
+  {
+    "filename": "art/vulnicura.png",
+    "include": true
+  },
+  {
+    "filename": "art/seen.png",
+    "include": true
+  },
+      {
+        "filename": "art/red.png",
+        "include": true
+    },
+  {
+    "filename": "art/seen1.png",
+    "include": true
+  },
+    {
+    "filename": "art/mapping.png",
+    "include": true
+  },
+    {
+        "filename": "art/fall.png",
+        "include": true
+    },
+    {
+        "filename": "art/jazz.png",
+        "include": true
+    },
+    {
+        "filename": "art/Mango.png",
+        "include": true
+    },
+
+    {
+        "filename": "art/monkey.png",
+        "include": true
+    },
+        {
+        "filename": "art/feather.png",
+        "include": true
+    }
+
+
+]

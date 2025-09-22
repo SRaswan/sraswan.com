@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  imports: [],
   templateUrl: './about.html',
-  styleUrl: './about.css'
+  styleUrls: ['./about.css']
 })
-export class About {
-
+export class About implements AfterViewInit {
+  ngAfterViewInit() {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach((tooltipTriggerEl) => {
+      new (window as any).bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }
 }

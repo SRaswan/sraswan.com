@@ -1,11 +1,21 @@
-<div class="d-flex min-vh-100" style="background-color: #181818;">
-  <!-- Sidebar -->
-  <nav class="sidebar d-flex flex-column flex-shrink-0 ps-4 text-white" 
-      id="menu" [attr.data-active-index]="activeIndex">
+<!-- Top Navbar (visible on small screens) -->
+<nav class="navbar navbar-dark bg-dark d-lg-none">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand mb-0 h1">Shaurya</span>
+  </div>
 
+</nav>
+
+<div class="d-flex min-vh-100" style="background-color: #181818;">
+  <!-- Sidebar (desktop only) -->
+  <nav class="sidebar d-none d-lg-flex flex-column flex-shrink-0 ps-4 text-white"
+       id="menu" [attr.data-active-index]="activeIndex">
     <ul class="nav flex-column" id="menu-items">
       <li class="nav-item">
-          <a class="nav-link text-white fs-4 position-relative" (mouseover)="setActiveIndex(0)" routerLink="/about">Shaurya</a>
+        <a class="nav-link text-white fs-4 position-relative" (mouseover)="setActiveIndex(0)" routerLink="/about">Shaurya</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white position-relative" (mouseover)="setActiveIndex(1)" routerLink="/about" routerLinkActive="active">About</a>
@@ -22,19 +32,56 @@
       <li class="nav-item">
         <a class="nav-link text-white position-relative" (mouseover)="setActiveIndex(5)" routerLink="/blog" routerLinkActive="active">Blog</a>
       </li>
-
     </ul>
-      <div id="menu-background-pattern"></div>
-  <div id="menu-background-image"></div>
+    <div id="menu-background-pattern"></div>
+    <div id="menu-background-image"></div>
   </nav>
+
+  <!-- Offcanvas (mobile only) -->
+  <div class="offcanvas offcanvas-start bg-dark text-white d-lg-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+                      <div id="menu-background-image" style="z-index: -1;"></div>
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body ">
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white fs-5" (click)="setActiveIndex(0)" routerLink="/about" data-bs-dismiss="offcanvas">Shaurya</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" (click)="setActiveIndex(1)" routerLink="/about" routerLinkActive="active" data-bs-dismiss="offcanvas">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" (click)="setActiveIndex(2)" routerLink="/resume" routerLinkActive="active" data-bs-dismiss="offcanvas">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" (click)="setActiveIndex(3)" routerLink="/projects" routerLinkActive="active" data-bs-dismiss="offcanvas">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" (click)="setActiveIndex(4)" routerLink="/art" routerLinkActive="active" data-bs-dismiss="offcanvas">Art</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" (click)="setActiveIndex(5)" routerLink="/blog" routerLinkActive="active" data-bs-dismiss="offcanvas">Blog</a>
+        </li>
+
+      </ul>
+      
+    </div>
+
+  </div>
+
 
   <!-- Main Content -->
   <div class="main-content flex-fill p-4">
     <router-outlet></router-outlet>
   </div>
 </div>
-    <footer class="footer mt-auto">
-      <div>
-        <p class="mb-0 small text-white-50">&copy; 2024 {{ title() }}. All rights reserved.</p>
-      </div>
-    </footer>
+
+<footer class="footer mt-auto">
+  <div>
+    <p class="mb-0 small text-white-50">&copy; 2024 {{ title() }}. All rights reserved.</p>
+  </div>
+</footer>

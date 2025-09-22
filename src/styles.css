@@ -102,3 +102,7 @@ body a, a:visited, a:active {
   font-weight: bold;
   font-size: 1.2em;
 } */
+
+.modal-backdrop {
+    display: none;
+}

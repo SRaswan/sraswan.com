@@ -1,55 +1,30 @@
-<div class="container my-5">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="display-4 border-bottom pb-3 mb-4">Art Gallery</h1>
-      
-      <p class="lead mb-4">Welcome to my art gallery! This is where I showcase my creative works and artistic expressions.</p>
-      
-      <h2 class="h3 mb-4">Featured Artwork</h2>
-      <div class="row g-4 mb-5">
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100">
-            <div class="artwork-placeholder d-flex flex-column justify-content-center align-items-center p-4">
-              <h3 class="h5 mb-3">Digital Art Piece 1</h3>
-              <p class="text-center mb-0">A description of this artwork would go here.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100">
-            <div class="artwork-placeholder d-flex flex-column justify-content-center align-items-center p-4">
-              <h3 class="h5 mb-3">Photography Series</h3>
-              <p class="text-center mb-0">A collection of photographs exploring urban landscapes.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100">
-            <div class="artwork-placeholder d-flex flex-column justify-content-center align-items-center p-4">
-              <h3 class="h5 mb-3">Abstract Drawing</h3>
-              <p class="text-center mb-0">An experimental piece using mixed media techniques.</p>
-            </div>
-          </div>
+
+<!-- Grid -->
+<div class="container m-3" *ngIf="items.length">
+  <div class="row g-4">
+    <div class="col-lg-4 col-md-6" *ngFor="let it of items">
+      <div class="h-100 shadow-sm">
+        <div class="bg-image hover-overlay ripple rounded" (click)="open(it)" role="button">
+          <img [src]="it.filename" class="w-100" [alt]="it.filename" />
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="card-title h4">About My Art</h2>
-              <p class="card-text">
-                My artistic journey encompasses various mediums and styles. I'm particularly drawn to 
-                digital art, photography, and experimental techniques that blend traditional and modern approaches.
-              </p>
-              <p class="card-text mb-0">
-                This gallery will be regularly updated with new works. Check back often to see what's new!
-              </p>
-            </div>
-          </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal (single reusable) -->
+<div class="modal fade" id="artModal" tabindex="-1" aria-hidden="false">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-body p-0">
+        <div class="ratio" [ngClass]="'ratio-4x3'">
+          <img *ngIf="active" [src]="active.filename" class="w-100 h-100 object-fit-contain" [alt]="active.filename" />
         </div>
+      </div>
+      <div class="px-3 py-2 d-flex justify-content-between align-items-center">
+        <div class="small text-secondary">{{ active?.filename }}</div>
+        <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal" (click)="clear()">Close</button>
       </div>
     </div>
   </div>
