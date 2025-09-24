@@ -3,31 +3,17 @@ on:
   push:
     branches: [ "main" ]
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Build & Deploy
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         with:
-          node-version: 20
-      - run: npm ci
-      - run: npx -p @angular/cli ng build --configuration production --base-href=/sraswan.com/
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist/sraswan-com/browser
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          build_configuration: production
+          base_href: /sraswan.com/
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/sraswan-com/browser
