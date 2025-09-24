@@ -22,7 +22,7 @@ export class Art implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<Artwork[]>('/artworks.json').subscribe({
+    this.http.get<Artwork[]>('./artworks.json').subscribe({
       next: list => {
         this.items = list.filter(item => item.include);
         // after items are set, schedule layout

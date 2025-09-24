@@ -41,7 +41,7 @@ export class Projects implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<ProjectsFile>('/projects.json').subscribe({
+    this.http.get<ProjectsFile>('./projects.json').subscribe({
         next: data => {
           this.projectsFile = data;
           this.projects = data.items || [];

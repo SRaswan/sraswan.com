@@ -91,7 +91,7 @@
 
 #menu-background-pattern {
   opacity: 0.7;
-  background-image: url('/imgs/moon.png');
+  /* background-image: url('/moon.png'); */
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 40vmin;
@@ -105,7 +105,7 @@
 }
 
 #menu-background-image {
-  background-image: url('/imgs/map.png');
+  /* background-image: url('/map.png'); */
     filter: invert(100%);
   background-repeat: repeat-y;
   background-position: center 40%;
