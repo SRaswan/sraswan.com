@@ -15,7 +15,7 @@
     ]
   },
     {
-    "title": "IsaBunny",
+    "title": "9-bit CPU in SystemVerilog",
     "skills": ["SystemVerilog", "Python", "Architecture", "Digital Logic", "QuestaSim", "ModelSim"],
     "description": "9-bit CPU for IEEE 16 bit floating point type conversion and arithmetic operations. Designed custom ISA that only 'jumps forward.' Simulated with ModelSim and assembler in Python.",
     "image": "proj/cpu.png",
