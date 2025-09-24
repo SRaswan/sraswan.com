@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
@@ -26,7 +26,7 @@ export interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink, DatePipe],
+  imports: [CommonModule, RouterLink, DatePipe, HttpClientModule],
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 
