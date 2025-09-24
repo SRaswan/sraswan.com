@@ -6,7 +6,16 @@ import { Projects } from './projects/projects';
 import { Resume } from './resume/resume';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/about', pathMatch: 'full' },
+  { path: '', redirectTo: '/about', pathMatch: 'full' ,
+    data: {
+      seo: {
+        title: 'Shaurya Raswan - Software Engineer / UCSD Student',
+        description: 'Portfolio, projects, art, and blog by Shaurya Raswan.',
+        image: 'https://sraswan.github.io/sraswan.com/imgs/pfp.png',
+        url: 'https://sraswan.github.io/sraswan.com/#/'
+      }
+    }
+  },
   { path: 'about', component: About },
   { path: 'art', component: Art },
   { path: 'blog', component: Blog },
