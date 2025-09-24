@@ -16,4 +16,4 @@ jobs:
           build_configuration: production
           base_href: /sraswan.com/
           deploy_branch: gh-pages
-          angular_dist_build_folder: dist/<your-project-name>
+          angular_dist_build_folder: dist/sraswan-com
