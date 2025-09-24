@@ -12,7 +12,7 @@ export const routes: Routes = [
         title: 'Shaurya Raswan - Software Engineer / UCSD Student',
         description: 'Portfolio, projects, art, and blog by Shaurya Raswan.',
         image: 'https://sraswan.github.io/sraswan.com/imgs/pfp.png',
-        url: 'https://sraswan.github.io/sraswan.com/#/'
+        url: 'https://sraswan.github.io/sraswan.com/'
       }
     }
   },
