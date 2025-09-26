@@ -1,5 +1,5 @@
 <!-- Top Navbar (visible on small screens) -->
-<nav class="navbar navbar-dark bg-dark d-lg-none">
+<nav class="navbar navbar-dark bg-dark d-sm-none">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
 
 <div class="d-flex min-vh-100" style="background-color: #181818;">
   <!-- Sidebar (desktop only) -->
-  <nav class="sidebar d-none d-lg-flex flex-column flex-shrink-0 ps-4 text-white"
+  <nav class="sidebar d-none d-sm-flex flex-column ps-4 text-white"
        id="menu" [attr.data-active-index]="activeIndex">
     <ul class="nav flex-column" id="menu-items">
       <li class="nav-item">
@@ -37,8 +37,8 @@
     <div style="background-image: url('./imgs/map.png');" id="menu-background-image"></div>
   </nav>
 
-  <!-- Offcanvas (mobile only) -->
-  <div class="offcanvas offcanvas-start bg-dark text-white d-lg-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <!-- Offcanvas (responsive: offcanvas behavior below lg) -->
+  <div class="offcanvas offcanvas-sm offcanvas-start bg-dark text-white d-sm-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div style="background-image: url('./imgs/map.png'); z-index: -1;" id="menu-background-image"></div>
 
     <div class="offcanvas-header">
