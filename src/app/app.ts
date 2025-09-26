@@ -9,7 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('SRaswan.com');
+  protected readonly title = signal('Shaurya Raswan');
   activeIndex = 0;
 
   setActiveIndex(index: number) {
