@@ -1,11 +1,3 @@
-/* Minimal app-specific styles - using Bootstrap for layout */
-
-/* Force dark theme application-wide */
-/* html[data-bs-theme="dark"] body {
-  background-color: #212529;
-
-  color: #dee2e6;
-} */
 
 .main-content {
   min-height: calc(100vh - 120px);
@@ -14,7 +6,6 @@
 }
 
 .footer {
-  background-color: #1a1a1a;
   color: #e2e8f0;
   text-align: center;
   padding: 1rem 0;
@@ -26,6 +17,12 @@
   display: flex;
   height: 100vh;
   /* width: 100vw; */
+}
+
+/* force sidebar to be pure black and ensure contrast */
+.sidebar {
+  background-color: #171717 !important;
+  color: #ffffff;
 }
 
 #menu-items {
@@ -112,7 +109,7 @@
   background-size: 100vmax;
   height: 100%;
   left: 0px;  
-  opacity: 0.04;
+  opacity: 0.03;
   position: fixed;
   top: 0px;
   transition: opacity 800ms ease,
