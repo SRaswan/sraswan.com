@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 interface Artwork {
   filename: string;
@@ -19,16 +21,20 @@ export class Art implements OnInit, OnDestroy {
   active?: Artwork;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
-    this.http.get<Artwork[]>('./artworks.json').subscribe({
-      next: list => {
-        this.items = list.filter(item => item.include);
-        // after items are set, schedule layout
-      },
-      error: err => console.log('Failed to load artworks', err)
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.http.get<Artwork[]>('./artworks.json').subscribe({
+        next: list => {
+          this.items = list.filter(item => item.include);
+        },
+        error: err => console.log('Failed to load artworks', err)
+      });
+    }
   }
 
   open(item: Artwork) {

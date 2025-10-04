@@ -14,13 +14,13 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/sraswan-com",
-
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [              
+            "assets": [
               "src/robots.txt",
               "src/sitemap.xml",
               {
@@ -34,11 +34,18 @@
               "src/styles.css"
             ],
             "scripts": [
-                "node_modules/@popperjs/core/dist/umd/popper.min.js",
-                "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
+
           },
           "configurations": {
+            "ssr": {
+              "ssr": {
+                "entry": "src/server.ts"
+              },
+              "outputMode": "server"
+            },
             "production": {
               "budgets": [
                 {
