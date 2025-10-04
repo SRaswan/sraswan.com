@@ -10,7 +10,6 @@
     "build:ssr": "ng build --configuration ssr",
     "serve:ssr": "node dist/sraswan-com/server/server.mjs",
     "start:ssr": "ng build --configuration ssr && node dist/sraswan-com/server/server.mjs"
-
   },
   "prettier": {
     "printWidth": 100,
