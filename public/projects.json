@@ -32,6 +32,7 @@
     "image": "proj/snake.png",
     "blogUrl": "",
     "links": [
+      { "label": "Inspiration", "url": "https://ucsd-cse231.github.io/sp24/" }
     ]
   },
         {
@@ -41,7 +42,7 @@
     "image": "proj/im2col.png",
     "blogUrl": "",
     "links": [
-
+      { "label": "Inspiration", "url": "https://docs-cse160.readthedocs.io/en/latest/PA8.html" }
     ]
   },
 
