@@ -116,11 +116,11 @@ h5 {
 
 .experience-icon {
   position: absolute;
-  left: -50px;
+  left: -40px;
   top: 10px;
   /* transform: translateY(-50%); */
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 
     filter: drop-shadow(0px -0px 1px rgba(255, 251, 218, 0.829));
 

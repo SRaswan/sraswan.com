@@ -21,7 +21,7 @@
 
 /* force sidebar to be pure black and ensure contrast */
 .sidebar {
-  background-color: #171717 !important;
+  background-color: #191919 !important;
   color: #ffffff;
 }
 
@@ -98,7 +98,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  transition: opacity 800ms ease, background-position 400ms ease;
+  transition: opacity 1000ms ease, background-position 700ms ease;
 }
 
 #menu-background-image {
@@ -109,11 +109,11 @@
   background-size: 100vmax;
   height: 100%;
   left: 0px;  
-  opacity: 0.03;
+  opacity: 0.02;
   position: fixed;
   top: 0px;
-  transition: opacity 800ms ease,
-    background-size 700ms ease,
+  transition: opacity 700ms ease,
+    background-size 400ms ease,
     background-position 700ms ease;
   width: 100%;
   z-index: 0;
@@ -126,8 +126,8 @@
 }
 
 #menu-items:hover ~ #menu-background-image {
-  background-size: 97vmax;
-  opacity: 0.12;
+  background-size: 98vmax;
+  opacity: 0.1;
 }
 
 #menu-items:hover > .nav-item {
