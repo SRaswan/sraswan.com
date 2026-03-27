@@ -1,6 +1,41 @@
 {
-"lastUpdated": "2025-09-22T00:58:00Z",
+"lastUpdated": "2026-03-26T00:00:00Z",
 "items": [
+  {
+    "title": "BurnMark",
+    "skills": ["Rust", "Fuzzing", "Automatic Differentiation", "ROCm HIP", "Cranelift", "LLVM"],
+    "description": "First Rust fuzzing harness for automatic differentiation in deep learning libraries targeting AMD ROCm HIP, Cranelift WebAssembly, and LLVM backends. Fixed 16 bugs in popular frameworks like Burn, mainly FFI boundary and computational graph construction issues. Also fuzzed ad_trait and evalexpr-jit.",
+    "image": "proj/burnmark.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "burnmark", "url": "research/burnmark.pdf" },
+      { "label": "GitHub 1", "url": "https://github.com/SRaswan/burnmark" },
+      { "label": "ad_rust", "url": "research/ad_rust.pdf" },
+            { "label": "GitHub 2", "url": "https://github.com/pyreking/cse291y" }
+    ]
+  },
+  {
+    "title": "F1 Convex Trajectory Optimization",
+    "skills": ["CVXPY", "Clarabel", "Optimization", "Vehicle Controls", "KKT", "Telemetry"],
+    "description": "Built a non-convex vehicle controls model with a KKT formulation to optimize lap curvature. Dual and primal formulation included. Used CVXPY, Clarabel, and real-world telemetry to simulate racing lines that outperformed F1 records.",
+    "image": "proj/f1.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "Paper", "url": "research/f1.pdf" },
+      { "label": "GitHub", "url": "https://github.com/SamarKaranch/F1-Track-Optimizer" }
+    ]
+  },
+  {
+    "title": "Calyx Hardware Compiler Evaluation",
+    "skills": ["Calyx", "Hardware Compilation", "Compiler Evaluation", "Reproducibility", "Intermediate Languages"],
+    "description": "Comprehensive artifact evaluation of the original 2021 Calyx (Futil) compiler against the new 2026 Calyx compiler and intermediate language. Analysis of parallelism techniques that are integral to safe and efficient hardware compilation. Inspired by Rust's Aliasing XOR Mutability.",
+    "image": "proj/calyx.png",
+    "blogUrl": "",
+    "links": [
+      { "label": "Paper", "url": "research/calyx.pdf" },
+      { "label": "GitHub", "url": "https://github.com/SRaswan/calyx2026-eval"}
+    ]
+  },
   {
     "title": "SignSight: ASL Translator with Computer Vision",
     "skills": ["React Native", "TensorFlow", "LSTM","OpenCV", "Flask", "MediaPipe"],
@@ -28,10 +63,11 @@
         {
     "title": "Snek2",
     "skills": ["Rust", "LLVM-IR", "x86 Assembly", "AST", "Register Alloc", "Fusion", "DFA"],
-    "description": "Compiler for a Python-like language with type inference, closures, and first-class functions. Compiles to x86 assembly via LLVM-IR.",
+    "description": "Compiler for a Python-like language with type inference, closures, and first-class functions. Compiles to x86 assembly via LLVM-IR. Developed JIT curriculum for students using dynasm.",
     "image": "proj/snake.png",
     "blogUrl": "",
     "links": [
+            { "label": "JIT", "url": "https://ucsd-cse131-fa25.github.io/" },
       { "label": "Inspiration", "url": "https://ucsd-cse231.github.io/sp24/" }
     ]
   },
