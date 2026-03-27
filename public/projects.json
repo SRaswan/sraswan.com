@@ -3,8 +3,8 @@
 "items": [
   {
     "title": "BurnMark",
-    "skills": ["Rust", "Fuzzing", "Automatic Differentiation", "ROCm HIP", "Cranelift", "LLVM"],
-    "description": "First Rust fuzzing harness for automatic differentiation in deep learning libraries targeting AMD ROCm HIP, Cranelift WebAssembly, and LLVM backends. Fixed 16 bugs in popular frameworks like Burn, mainly FFI boundary and computational graph construction issues. Also fuzzed ad_trait and evalexpr-jit.",
+    "skills": ["Rust", "Fuzzing", "Automatic Differentiation", "LLM Agents", "Cranelift", "Benchmarking"],
+    "description": "First Rust fuzzing harness for automatic differentiation in deep learning libraries. Fixed 16 bugs in popular frameworks, mainly FFI boundary and computational graph construction issues. Also fuzzed ad_trait and evalexpr-jit. Benchmarking Rust LLM agents with different backends (Candle, Burn, native PyTorch).",
     "image": "proj/burnmark.png",
     "blogUrl": "",
     "links": [
@@ -16,7 +16,7 @@
   },
   {
     "title": "F1 Convex Trajectory Optimization",
-    "skills": ["CVXPY", "Clarabel", "Optimization", "Vehicle Controls", "KKT", "Telemetry"],
+    "skills": ["CVXPY", "Clarabel", "Convex Optimization", "Controls"],
     "description": "Built a non-convex vehicle controls model with a KKT formulation to optimize lap curvature. Dual and primal formulation included. Used CVXPY, Clarabel, and real-world telemetry to simulate racing lines that outperformed F1 records.",
     "image": "proj/f1.png",
     "blogUrl": "",
@@ -27,7 +27,7 @@
   },
   {
     "title": "Calyx Hardware Compiler Evaluation",
-    "skills": ["Calyx", "Hardware Compilation", "Compiler Evaluation", "Reproducibility", "Intermediate Languages"],
+    "skills": ["Architecture", "Compilers", "HLS", "Parallelism", "Rust"],
     "description": "Comprehensive artifact evaluation of the original 2021 Calyx (Futil) compiler against the new 2026 Calyx compiler and intermediate language. Analysis of parallelism techniques that are integral to safe and efficient hardware compilation. Inspired by Rust's Aliasing XOR Mutability.",
     "image": "proj/calyx.png",
     "blogUrl": "",
