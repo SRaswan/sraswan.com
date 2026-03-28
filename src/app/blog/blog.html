@@ -4,7 +4,7 @@
       <ng-container *ngIf="!activeBlog">
         <h1 class="display-5 border-bottom pb-1 mb-2 font-helvetica"><em>Anti</em>-Blog</h1>
 
-        <p class="text-secondary lead fs-6 mb-2">Note: 
+        <p class="text-secondary lead fs-6 mb-3">Note: 
           An "anti-blog" diverts from common blogging conventions in favor of evergreen pages and long-form, curated structures. 
           I hope to develop this tiny digital garden to be enjoyed in isolation.
         Unless marked as educational, the content below may not be representative of my experience or thoughts. </p>
@@ -12,9 +12,6 @@
 
       <div *ngIf="loading" class="text-secondary">Loading…</div>
       <div *ngIf="error" class="text-danger">{{ error }}</div>
-      <div class="text-secondary fs-6 mb-3" *ngIf="updatedAt && !activeBlog">
-        Updated {{ updatedAt | date:'medium' }}
-      </div>
 
       <ng-container *ngIf="!loading && !error && !activeBlog">
         <div class="row g-3 mb-5">
