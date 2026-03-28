@@ -17,13 +17,13 @@
             </ng-container>
 
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title mb-2 h5">{{ p.title }}</h3>
+              <h5 class="card-title mb-2">{{ p.title }}</h5>
 
-              <div class="mb-2">
+              <div class="mb-1">
                 <span class="tech-tag" *ngFor="let s of p.skills">{{ s }}</span>
               </div>
 
-              <p class="card-text fs-6 flex-grow-1 mb-2" style="font-family: Garamond, serif;">
+              <p class="card-text fs-6 flex-grow-1 mb-2" >
                 {{ p.description }}
               </p>
 
