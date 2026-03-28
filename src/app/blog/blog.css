@@ -70,6 +70,28 @@
 	font-weight: 300;
 }
 
+:host ::ng-deep markdown figure {
+	margin: 1.2rem auto;
+	text-align: center;
+}
+
+:host ::ng-deep markdown figure img,
+:host ::ng-deep markdown > img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+:host ::ng-deep markdown figcaption {
+	margin-top: 0.5rem;
+	font-family: 'Cormorant Garamond', 'Lora', Georgia, serif;
+	font-size: 18px;
+	line-height: 1.45;
+	font-style: italic;
+	color: #b8c3d1;
+}
+
 :host ::ng-deep markdown pre {
 	border-radius: 0.5rem;
 	padding: 0.85rem;
