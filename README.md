@@ -1,64 +1,89 @@
 # sraswan.com
 
-A personal website built with Angular featuring pages for art, blog, resume, about me, and projects.
+A personal website built with Angular.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+## Commands
 
-## Development server
+### Install dependencies
 
-To start a local development server, run:
+```bash
+npm install
+```
+
+Installs all project packages.
+
+### Start dev server
+
+```bash
+npm start
+```
+
+Runs Angular dev mode at `http://localhost:4200`.
+
+### Start dev server (Angular CLI)
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Same local non-SSR dev server at `http://localhost:4200`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Build production bundle
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Builds the production browser bundle.
+
+### Build and preview locally (without SSR)
 
 ```bash
-ng generate --help
+npm run build
+npx http-server dist/sraswan-com/browser -p 4200 -c-1
 ```
 
-## Building
+Serves the built static site locally at `http://localhost:4200`.
 
-To build the project run:
+### Build in watch mode
 
 ```bash
-ng build
+npm run watch
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Continuously rebuilds in development configuration.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Run tests
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+Runs Karma tests.
 
-For end-to-end (e2e) testing, run:
+### Build SSR output
 
 ```bash
-ng e2e
+npm run build:ssr
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Builds browser + server bundles for SSR.
 
-## Additional Resources
+### Serve built SSR app
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run serve:ssr
+```
+
+Starts the built SSR server at `http://localhost:4000`.
+
+### Build and run SSR in one command
+
+```bash
+npm run start:ssr
+```
+
+Builds SSR output and starts the SSR server.
 
 ## To vercel and github pages
 
