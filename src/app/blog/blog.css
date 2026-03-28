@@ -81,8 +81,8 @@
 :host ::ng-deep markdown h4,
 :host ::ng-deep markdown h5,
 :host ::ng-deep markdown h6 {
-	font-family: "SF Pro Display", -apple-system, system-ui, "system-ui", Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	font-weight: 500;
+	/* font-family: "SF Pro Display", -apple-system, system-ui, "system-ui", Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+	/* font-weight: 500; */
 	margin-top: 1.5rem;
 	margin-bottom: 0.75rem;
 }

@@ -30,7 +30,8 @@
   position: relative; */
   z-index: 2;
     font-size: large;
-  font-family: Garamond, serif;
+  	font-family: 'Cormorant Garamond', 'Lora', Georgia, serif;
+
 /* letter-spacing: 0.5px;   */
 }
 
