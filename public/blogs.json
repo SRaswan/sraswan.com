@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2026-03-26T00:00:00Z",
+  "items": [
+    {
+      "slug": "welcome",
+      "title": "Fav Music",
+      "excerpt": "Just a list of my favorite songs as a starter blog.",
+      "date": "2026-03-27",
+      "tags": ["meta", "writing", "music"],
+      "image": "imgs/pfp.png",
+      "markdownFile": "26-03-26.md"
+    }
+  ]
+}

@@ -8,9 +8,9 @@
     "image": "proj/burnmark.png",
     "blogUrl": "",
     "links": [
-      { "label": "burnmark", "url": "research/burnmark.pdf" },
+      { "label": "Paper 1", "url": "research/burnmark.pdf" },
       { "label": "GitHub 1", "url": "https://github.com/SRaswan/burnmark" },
-      { "label": "ad_rust", "url": "research/ad_rust.pdf" },
+      { "label": "Paper 2", "url": "research/ad_rust.pdf" },
             { "label": "GitHub 2", "url": "https://github.com/pyreking/cse291y" }
     ]
   },

@@ -1,7 +1,7 @@
 <div class="container my-1">
   <div class="row justify-content-center">
     <div class="col-10">
-      <h1 class="display-5 border-bottom pb-1 mb-2" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Projects</h1>
+      <h1 class="display-5 border-bottom pb-1 mb-2 font-helvetica">Projects</h1>
 
       <div *ngIf="loading" class="text-secondary">Loading…</div>
       <div *ngIf="error" class="text-danger">{{ error }}</div>
@@ -23,17 +23,17 @@
                 <span class="tech-tag" *ngFor="let s of p.skills">{{ s }}</span>
               </div>
 
-              <p class="card-text fs-6 flex-grow-1 mb-2">
+              <p class="card-text fs-6 flex-grow-1 mb-2" style="font-family: Garamond, serif;">
                 {{ p.description }}
               </p>
 
               <div class="">
-                <a *ngIf="p.blogUrl" [routerLink]="p.blogUrl" class="btn btn-outline-secondary btn-sm me-2">
+                <a *ngIf="p.blogUrl" [routerLink]="p.blogUrl" class="btn btn-outline-secondary btn-sm">
                   Blog Post
                 </a>
                 <ng-container *ngFor="let link of p.links || []">
                   <a [href]="link.url" target="_blank" rel="noopener"
-                     class="btn btn-sm me-2 btn-primary">
+                     class="btn btn-sm me-2 mb-1 btn-primary">
                     {{ link.label }}
                   </a>
                 </ng-container>

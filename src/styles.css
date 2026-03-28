@@ -1,4 +1,5 @@
-/* Global styles for dark theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lora:wght@300;400;500;600&display=swap');
 
 * {
   box-sizing: border-box;
@@ -10,8 +11,10 @@ html {
 
 body {
   margin: 0;
-  font-family: Garamond, serif;
+  /* font-family: Garamond, serif; */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4;
+  font-weight: 300;
   height: 100%;
   background-color: var(--bs-dark) !important;
     /* background-color: #0c46aa !important; */
@@ -24,6 +27,15 @@ body {
   --bs-body-bg: #212529;
 }
 
+.font-fira-mono {
+  font-family: 'Fira Mono', monospace;
+}
+
+.font-helvetica {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+
+}
 
 .btn-primary {
   background-color: #4299e1 !important;
@@ -87,9 +99,18 @@ body a, a:visited, a:active {
 
 
 .card {
-  background-color: #2d3748;
-  border-color: #4a5568;
+  background-color: #1e1e1e62;
+  border: 1px solid rgb(79, 86, 97);
+  border-radius: 15px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
   color: #e2e8f0;
+  overflow: hidden;
+}
+
+.card-img-top {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .card-body {

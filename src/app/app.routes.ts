@@ -19,6 +19,7 @@ export const routes: Routes = [
   { path: 'about', redirectTo: '', pathMatch: 'full' },
 
   { path: 'art', component: Art },
+  { path: 'blog/:slug', component: Blog },
   { path: 'blog', component: Blog },
   { path: 'projects', component: Projects },
   { path: 'resume', component: Resume },

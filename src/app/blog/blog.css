@@ -1,0 +1,82 @@
+.blog-card {
+	border: 1px solid rgba(160, 174, 192, 0.4);
+	display: block;
+	cursor: pointer;
+	transition: transform 0.18s ease;
+    background-color: #99caff21;
+
+}
+
+.blog-card:hover {
+	transform: translateY(-4px);
+}
+
+.blog-tag {
+	background-color: #4a5568;
+	color: #e2e8f0;
+	padding: 0.1rem 0.35rem;
+	border-radius: 0.4rem;
+	font-size: 0.78rem;
+	margin-right: 0.3rem;
+	margin-bottom: 0.3rem;
+	display: inline-block;
+}
+
+:host h1,
+:host h2,
+:host h3,
+:host h4,
+:host h5,
+:host h6 {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    	font-weight: 300;
+
+}
+
+.card-text {
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+
+.blog-detail-excerpt {
+	font-size: 1.15rem;
+	line-height: 1.7;
+	color: #cfd8e3;
+}
+
+.blog-detail-divider {
+	border-color: rgb(160, 174, 192);
+	margin: 1.1rem 0 1.4rem;
+}
+
+:host ::ng-deep markdown h1,
+:host ::ng-deep markdown h2,
+:host ::ng-deep markdown h3,
+:host ::ng-deep markdown h4,
+:host ::ng-deep markdown h5,
+:host ::ng-deep markdown h6 {
+	font-family: "SF Pro Display", -apple-system, system-ui, "system-ui", Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 500;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+
+:host ::ng-deep markdown li,
+:host ::ng-deep markdown p {
+	font-family: 'Cormorant Garamond', 'Lora', Georgia, serif;
+	font-size: 22px;
+	line-height: 32px;
+	font-weight: 300;
+}
+
+:host ::ng-deep markdown pre {
+	border-radius: 0.5rem;
+	padding: 0.85rem;
+	overflow-x: auto;
+}
+
+:host ::ng-deep markdown code {
+	padding: 0.1rem 0.28rem;
+	border-radius: 0.35rem;
+}
