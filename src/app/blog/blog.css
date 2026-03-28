@@ -38,6 +38,11 @@
 	line-height: 1.65;
 }
 
+.page-card {
+    border: 1px solid rgba(160, 174, 192, 0.0);
+    background-color: #0d0d0d0b;
+    backdrop-filter: blur(2px);
+}
 
 .blog-detail-excerpt {
 	font-size: 1.15rem;
@@ -48,6 +53,26 @@
 .blog-detail-divider {
 	border-color: rgb(160, 174, 192);
 	margin: 1.1rem 0 1.4rem;
+}
+
+
+.blog-action-col {
+	position: sticky;
+	top: 3.4rem;
+	align-self: flex-start;
+	z-index: 2;
+}
+
+.blog-action-sidebar {
+	position: static;
+}
+
+@media (max-width: 767.98px) {
+	.blog-action-col,
+	.blog-action-sidebar {
+		position: static;
+		margin-bottom: 0.5rem;
+	}
 }
 
 :host ::ng-deep markdown h1,

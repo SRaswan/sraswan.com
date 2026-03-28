@@ -46,27 +46,39 @@
       </ng-container>
 
       <ng-container *ngIf="!loading && !error && activeBlog">
-        <a routerLink="/blog" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
-
-        <article class="card mb-5">
-          <div class="card-body">
-            <h1 class="card-title h1 blog-detail-title">{{ activeBlog.title }}</h1>
-
-            <h6 class="blog-detail-excerpt mb-2">{{ activeBlog.excerpt }}</h6>
-
-            <div class="text-muted mb-3">
-              <h6>{{ activeBlog.date | date:'longDate' }}</h6>
+        <div class="row p-0">
+          <div class="col-lg-1 blog-action-col">
+            <div class="blog-action-sidebar d-grid gap-2">
+              <a routerLink="/blog" class="btn btn-outline-secondary btn-sm">← </a>
+              <button type="button" class="btn btn-outline-secondary btn-sm" (click)="copyCurrentPostUrl()">
+                Share
+              </button>
+              <small class="text-success" *ngIf="shareCopied">Copied!</small>
             </div>
-
-            <h6 class="mb-3" *ngIf="activeBlog.tags?.length">
-              <span class="blog-tag" *ngFor="let tag of activeBlog.tags">{{ tag }}</span>
-            </h6>
-
-            <hr class="blog-detail-divider" />
-
-            <markdown [src]="getMarkdownPath(activeBlog)"></markdown>
           </div>
-        </article>
+
+          <div class="col-lg-9">
+            <article class="card page-card">
+              <div class="card-body">
+                <h1 class="card-title h1 blog-detail-title">{{ activeBlog.title }}</h1>
+
+                <h6 class="blog-detail-excerpt">{{ activeBlog.excerpt }}</h6>
+
+                <div class="text-muted">
+                  <h6>{{ activeBlog.date | date:'longDate' }}</h6>
+                </div>
+
+                <h6 class="" *ngIf="activeBlog.tags?.length">
+                  <span class="blog-tag" *ngFor="let tag of activeBlog.tags">{{ tag }}</span>
+                </h6>
+
+                <hr class="blog-detail-divider" />
+
+                <markdown [src]="getMarkdownPath(activeBlog)"></markdown>
+              </div>
+            </article>
+          </div>
+        </div>
       </ng-container>
     </div>
   </div>

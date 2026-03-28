@@ -33,6 +33,7 @@ export class Blog implements OnInit {
   updatedAt?: Date;
   activeSlug?: string;
   activeBlog?: BlogItem;
+  shareCopied = false;
 
   constructor(
     private http: HttpClient,
@@ -58,6 +59,7 @@ export class Blog implements OnInit {
           this.activeBlog = this.activeSlug
             ? this.blogs.find(blog => blog.slug === this.activeSlug)
             : undefined;
+          this.shareCopied = false;
 
           if (this.activeSlug && !this.activeBlog) {
             this.error = 'Blog post not found.';
@@ -78,6 +80,37 @@ export class Blog implements OnInit {
 
   getMarkdownPath(item: BlogItem): string {
     return `./blog/${item.markdownFile}`;
+  }
+
+  async copyCurrentPostUrl(): Promise<void> {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const url = window.location.href;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = url;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+
+      this.shareCopied = true;
+      window.setTimeout(() => {
+        this.shareCopied = false;
+      }, 1800);
+    } catch {
+      this.shareCopied = false;
+    }
   }
 
 }
