@@ -2,6 +2,23 @@
 
 A personal website built with Angular.
 
+## Managing content
+
+All page content lives in plain JSON/Markdown files under `public/` — edit these,
+then commit and push. No code changes needed for routine updates.
+
+| What | File | Notes |
+| --- | --- | --- |
+| About page (bio, education, experience, socials) | `public/about.json` | Add an entry to `education` / `experience`; socials use Font Awesome icon classes. |
+| Projects | `public/projects.json` | Each item has `title`, `skills`, `description`, `image` (under `public/proj/`), and optional `links`. |
+| Art gallery | `public/artworks.json` | Add `{ "filename": "art/your-image.png", "include": true }`. Drop the image in `public/art/`. Set `include: false` to hide without deleting. |
+| Blog index | `public/blogs.json` | Metadata for each post (`slug`, `title`, `excerpt`, `date`, `tags`, `image`, `markdownFile`). |
+| Blog post body | `public/blog/<markdownFile>` | The Markdown rendered at `/blog/<slug>`. |
+| Resume PDF | `public/resumes/YY-MM-DD.pdf` | Add the new PDF, then update `filename` in `src/app/resume/resume.ts`. The "Updated" date is parsed from the file name. |
+
+Per-page titles and social/SEO meta tags come from the route `data.seo` blocks in
+`src/app/app.routes.ts` and are applied automatically by `src/app/seo.service.ts`.
+
 ## Commands
 
 ### Install dependencies

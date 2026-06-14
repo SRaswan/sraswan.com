@@ -1,178 +1,90 @@
-<div class="container">
+<div class="container" *ngIf="profile">
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="card px-4 py-3">
-      <div class="row py-2">
-        <div class="col-md-9">
+        <div class="row py-2">
+          <div class="col-md-9">
+            <div class="font-fira-mono">
+              <h1 class="hover-underline display-2 fw-bold"
+                  style="font-family: 'Trebuchet MS', sans-serif; color: #ebfdff;">
+                {{ profile.name }}
+              </h1>
+            </div>
 
-          <div class="font-fira-mono">
-            <h1 class='hover-underline display-2 fw-bold' style="font-family: 'Trebuchet MS', sans-serif; color: #ebfdff;">
-              Shaurya Raswan
+            <div class="font-fira-mono">
+              <p class="text-muted">
+                <ng-container *ngFor="let role of profile.roles; let last = last">
+                  <a *ngIf="role.url; else plainRole" [href]="role.url" target="_blank" [title]="role.title || role.text">{{ role.text }}</a>
+                  <ng-template #plainRole>{{ role.text }}</ng-template>
+                  <span *ngIf="!last"> / </span>
+                </ng-container>
+              </p>
+            </div>
 
-            </h1>
-            
+            <div class="font-fira-mono">
+              <p class="fs-6 mb-1" style="color: #ff9797;">{{ profile.bio }}</p>
+            </div>
           </div>
 
-          <div class="">
-            <p class='text-muted font-fira-mono'>
-              Software Engineer / <a href="https://www.rust-lang.org/" target="_blank" title="Rust Programming Language">Rustacean</a> / Writer / He.him
-            </p>
-            
-          </div>
-
-          <div class="font-fira-mono">
-          <p class="fs-6 mb-1" style="color: #ff9797; ">
-Hi! I'm a CS master's student at the University of California, San Diego. I am primarily interested in compiler construction for accelerators and parallel architectures. Feel free to connect!</p>
-        <!-- <img src="imgs/rose.png" alt="rose" class="inline-icon ms-1 mt-2">                         -->
-        <!-- <img src="./imgs/cat1.png" style="vertical-align: 0em; width: 3em; height: 3em;"  class="inline-icon ms-2"> -->
-
-          </div>
-
-        </div>
-        <div class="col-3 text-center">
-          <img src="./imgs/pfp.png" alt="Shaurya Raswan" class="rounded-circle profile-image">
-          <ul class="mt-2 d-flex justify-content-center p-1 gap-1 list-unstyled">
-              <li>
-                <a href="https://github.com/SRaswan" target="_blank" title="GitHub" class="d-block text-center social">
-                  <i class="fab fa-github icon"></i>
+          <div class="col-3 text-center">
+            <img [src]="profile.image" [alt]="profile.name" class="rounded-circle profile-image" />
+            <ul class="mt-2 d-flex justify-content-center p-1 gap-1 list-unstyled">
+              <li *ngFor="let social of profile.socials">
+                <a [href]="social.url" target="_blank" [title]="social.label" class="d-block text-center social">
+                  <i [class]="social.icon + ' icon'"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://www.instagram.com/shaurya.raswan" target="_blank" title="Instagram" class="d-block text-center social">
-                  <i class="fab fa-instagram icon"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/shaurya-raswan/" target="_blank" title="LinkedIn" class="d-block text-center social">
-                  <i class="fab fa-linkedin-in icon"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://open.spotify.com/user/shauryaraswan?si=c2ef9a37f1c34e72" target="_blank" title="Spotify" class="d-block text-center social">
-                  <i class="fa-brands fa-spotify icon"></i>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:shauryaraswan@gmail.com"title="Email" class="d-block text-center social">
-                  <i class="fas fa-envelope icon"></i>
-                </a>
-              </li>
-              
             </ul>
-        </div>
-      </div>
-
-      <!-- <div class="border-bottom py-2" ></div> -->
-      <div class="font-helvetica fs-4">
-
-      <div class="row" style="color: rgb(248, 252, 255);">
-        <h5 class="mb-1">Education</h5>
-
-  <!-- <hr class="mb-2"> -->
-  <div class="col-12 mb-4">
-            <hr class="mt-0 mb-2">
-
-      <div class="mb-4 position-relative">
-        <div class="d-flex justify-content-between align-items-start">
-          <div>
-            <div>UC San Diego, MS in Computer Science</div>
-            <div class="fs-6" style="color: #dbe2ff;">&#8195;~ Research Focus: Compiler Construction</div>
-          </div>
-          <div class="fs-6 mt-2 text-end">
-            <div>Fall 2025 - Spring 2026</div>
-            <div>La Jolla, CA</div>
           </div>
         </div>
-      </div>
 
-      <div class="position-relative">
-        <div class="d-flex justify-content-between align-items-start">
-          <div>
-            <div>UC San Diego, BS in Computer Science</div>
-          </div>
-          <div class="fs-6 mt-2 text-end">
-            <div>Fall 2022 - Spring 2025</div>
-            <div>La Jolla, CA</div>
+        <div class="font-helvetica fs-4">
+          <div class="row" style="color: rgb(248, 252, 255);">
+            <h5 class="mb-1">Education</h5>
+
+            <div class="col-12 mb-4">
+              <hr class="mt-0 mb-2" />
+              <div class="position-relative"
+                   [class.mb-4]="!last" *ngFor="let edu of education; let last = last">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div>{{ edu.school }}</div>
+                    <div class="fs-6" style="color: #dbe2ff;" *ngIf="edu.note">&#8195;~ {{ edu.note }}</div>
+                  </div>
+                  <div class="fs-6 mt-2 text-end">
+                    <div>{{ edu.period }}</div>
+                    <div>{{ edu.location }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="mb-1">Experience</h5>
+            <hr class="mt-0 mb-2" />
+
+            <div class="mb-4 position-relative" *ngFor="let job of experience">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div>{{ job.role }}</div>
+                  <a *ngIf="job.orgUrl; else plainOrg" [href]="job.orgUrl" target="_blank" [title]="job.org">{{ job.org }}</a>
+                  <ng-template #plainOrg>{{ job.org }}</ng-template>
+                  <div class="fs-6" style="color: #dbe2ff;" *ngIf="job.details?.length">
+                    <ng-container *ngFor="let d of job.details; let first = first">
+                      <br *ngIf="!first" />
+                      &#8195;~ {{ d.prefix }}<a *ngIf="d.url; else plainDetail" [href]="d.url" target="_blank" [title]="d.label">{{ d.label }}</a>
+                      <ng-template #plainDetail>{{ d.label }}</ng-template>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="fs-6 mt-2 text-end">
+                  <div>{{ job.period }}</div>
+                  <div>{{ job.location }}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-      
-        <h5 class="mb-1">Experience</h5>
-
-<!-- <hr class="mb-2"> -->
-
-<div class="mb-4 position-relative">
-              <hr class="mt-0 mb-2">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <div class="">Software Engineer</div>
-      <a class="" href="https://www.whatnot.com" target="_blank" title="Whatnot">Whatnot</a>
-    </div>
-    <div class="fs-6 mt-2 text-end">
-      <div class="">Starting August 2026</div>
-      <div class="">Los Angeles, CA</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="mb-4 position-relative">
-  <img src="./imgs/ucsd.png" alt="CSE Logo" class="experience-icon">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <div class="">Teaching Assistant</div>
-      <a href="https://cse.ucsd.edu" target="_blank" title="UC San Diego Computer Science and Engineering" class="">UC San Diego</a>
-            <div class="fs-6" style="color: #dbe2ff;">&#8195;~ TA for
-        <a class="" href="https://ucsd-cse29.github.io/wi26/" target="_blank" title="CSE 29">CSE 29: Systems Programming & Software Tools</a>
-         <br>&#8195;~ TA for
-        <a class="" href="https://ucsd-cse131-fa25.github.io/" target="_blank" title="CSE 131">CSE 131: Compiler Construction</a>
-         <br>&#8195;~ Tutor for
-        <a class="" href="https://nadia-polikarpova.github.io/cse130-web/" target="_blank" title="CSE 130">CSE 130: Programming Languages</a>
-      </div>
-    </div>
-    <div class="fs-6 mt-2 text-end">
-      <div class="">Fall 2025 - Spring 2026</div>
-      <div class="">La Jolla, CA</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="mb-4 position-relative">
-  <img src="./imgs/sg.png" alt="CSE Logo" class="experience-icon">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <div class="">Software Engineer Intern</div>
-      <a class="" href="https://www.societegenerale.com/en" target="_blank" title="Societe Generale">Societe Generale</a>
-    </div>
-    <div class="fs-6 mt-2 text-end">
-      <div class="">Summer 2025</div>
-      <div class="">New York, NY</div>
-    </div>
-  </div>
-</div>
-
-<div class="mb-4 position-relative">
-  <img src="./imgs/smbc.png" alt="" class="experience-icon">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <div class="">Software Engineer Intern</div>
-      <a class="" href="https://www.smbcgroup.com/americas" target="_blank" title="SMBC Group">SMBC Group</a>
-    </div>
-    <div class="fs-6 mt-2 text-end">
-      <div class="">Summer 2024</div>
-      <div class="">New York, NY</div>
-    </div>
-  </div>
-</div>
-
-
-
-</div>
-
-      </div>
-    </div>
-      </div>
   </div>
 </div>

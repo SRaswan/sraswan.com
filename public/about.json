@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2026-06-07T00:00:00Z",
+  "profile": {
+    "name": "Shaurya Raswan",
+    "image": "imgs/pfp.png",
+    "roles": [
+      { "text": "Software Engineer" },
+      { "text": "Rustacean", "url": "https://www.rust-lang.org/", "title": "Rust Programming Language" },
+      { "text": "Writer" },
+      { "text": "He.him" }
+    ],
+    "bio": "Hi! I'm a CS master's student at the University of California, San Diego. I am primarily interested in compiler construction for accelerators and parallel architectures. Feel free to connect!",
+    "socials": [
+      { "label": "GitHub", "icon": "fab fa-github", "url": "https://github.com/SRaswan" },
+      { "label": "Instagram", "icon": "fab fa-instagram", "url": "https://www.instagram.com/shaurya.raswan" },
+      { "label": "LinkedIn", "icon": "fab fa-linkedin-in", "url": "https://www.linkedin.com/in/shaurya-raswan/" },
+      { "label": "Spotify", "icon": "fa-brands fa-spotify", "url": "https://open.spotify.com/user/shauryaraswan?si=c2ef9a37f1c34e72" },
+      { "label": "Email", "icon": "fas fa-envelope", "url": "mailto:shauryaraswan@gmail.com" }
+    ]
+  },
+  "education": [
+    {
+      "school": "UC San Diego, MS in Computer Science",
+      "note": "Research Focus: Compiler Construction",
+      "period": "Fall 2025 - Spring 2026",
+      "location": "La Jolla, CA"
+    },
+    {
+      "school": "UC San Diego, BS in Computer Science",
+      "period": "Fall 2022 - Spring 2025",
+      "location": "La Jolla, CA"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "org": "Whatnot",
+      "orgUrl": "https://www.whatnot.com",
+      "period": "Starting August 2026",
+      "location": "Los Angeles, CA"
+    },
+    {
+      "role": "Teaching Assistant",
+      "org": "UC San Diego",
+      "orgUrl": "https://cse.ucsd.edu",
+      "period": "Fall 2025 - Spring 2026",
+      "location": "La Jolla, CA",
+      "details": [
+        { "prefix": "TA for ", "label": "CSE 29: Systems Programming & Software Tools", "url": "https://ucsd-cse29.github.io/wi26/" },
+        { "prefix": "TA for ", "label": "CSE 131: Compiler Construction", "url": "https://ucsd-cse131-fa25.github.io/" },
+        { "prefix": "Tutor for ", "label": "CSE 130: Programming Languages", "url": "https://nadia-polikarpova.github.io/cse130-web/" }
+      ]
+    },
+    {
+      "role": "Software Engineer Intern",
+      "org": "Societe Generale",
+      "orgUrl": "https://www.societegenerale.com/en",
+      "period": "Summer 2025",
+      "location": "New York, NY"
+    },
+    {
+      "role": "Software Engineer Intern",
+      "org": "SMBC Group",
+      "orgUrl": "https://www.smbcgroup.com/americas",
+      "period": "Summer 2024",
+      "location": "New York, NY"
+    }
+  ]
+}

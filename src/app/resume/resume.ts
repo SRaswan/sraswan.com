@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
 
@@ -9,9 +9,11 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./resume.css'],
   imports: [DatePipe]
 })
-export class Resume {
+export class Resume implements OnInit {
   private sanitizer = inject(DomSanitizer);
 
+  // To update the resume: drop a new PDF in public/resumes/ named YY-MM-DD.pdf
+  // and set `filename` to match. The "Updated" date is derived from the name.
   filename = '26-03-26';
   pdfUrl!: SafeResourceUrl;
   updatedAt?: Date;

@@ -37,7 +37,6 @@
     "@fortawesome/fontawesome-svg-core": "^7.0.1",
     "@fortawesome/free-solid-svg-icons": "^7.0.1",
     "@popperjs/core": "^2.11.8",
-    "boostrap": "^2.0.0",
     "bootstrap": "^5.3.3",
     "express": "^4.21.2",
     "imagesloaded": "^5.0.0",
