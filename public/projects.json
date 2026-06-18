@@ -6,7 +6,7 @@
     "title": "Agentic RAG System for Documentation",
     "skills": ["Agents", "RAG", "Context Engineering", "LoRA SFT", "SentenceTransformers", "HuggingFace", "LangChain"],
     "description": "Comprehensive reasoning RAG system for RapidFire AI documentation. Semantic chuncking, retrieval, cross-encoding, and parallelization workflow to a final LoRA SFT generator for domain adaptation. Evaluated with reference-based metrics and LLM-as-Judge. Used RapidFire AI's expiriment wrapper for grid search of configs.",
-    "image": "proj/burnmark.png",
+    "image": "proj/rapidfireai.png",
     "blogUrl": "",
     "links": [
       { "label": "Paper 1", "url": "research/rapidfireai1.pdf" },
