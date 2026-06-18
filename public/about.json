@@ -9,7 +9,7 @@
       { "text": "Writer" },
       { "text": "He.him" }
     ],
-    "bio": "Hi! I'm a CS master's student at the University of California, San Diego. I am primarily interested in compiler construction for accelerators and parallel architectures. Feel free to connect!",
+    "bio": "Hi! I'm a software engineer with a MS in Computer Science from the University of California, San Diego. I am primarily interested in compiler construction for accelerators and parallel architectures. Feel free to connect!",
     "socials": [
       { "label": "GitHub", "icon": "fab fa-github", "url": "https://github.com/SRaswan" },
       { "label": "Instagram", "icon": "fab fa-instagram", "url": "https://www.instagram.com/shaurya.raswan" },

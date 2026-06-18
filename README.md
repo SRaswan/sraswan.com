@@ -1,6 +1,6 @@
 # sraswan.com
 
-A personal website built with Angular.
+Personal website built with Angular.
 
 ## Managing content
 
