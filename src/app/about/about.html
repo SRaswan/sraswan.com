@@ -70,8 +70,7 @@
                   <ng-template #plainOrg>{{ job.org }}</ng-template>
                   <div class="fs-6" style="color: #dbe2ff;" *ngIf="job.details?.length">
                     <ng-container *ngFor="let d of job.details; let first = first">
-                      <br *ngIf="!first" />
-                      &#8195;~ {{ d.prefix }}<a *ngIf="d.url; else plainDetail" [href]="d.url" target="_blank" [title]="d.label">{{ d.label }}</a>
+                      <br *ngIf="!first" />&#8195;~ {{ d.prefix }}<a *ngIf="d.url; else plainDetail" [href]="d.url" target="_blank" [title]="d.label">{{ d.label }}</a>
                       <ng-template #plainDetail>{{ d.label }}</ng-template>
                     </ng-container>
                   </div>
