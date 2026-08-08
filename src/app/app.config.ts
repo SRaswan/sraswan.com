@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { provideMarkdown } from 'ngx-markdown';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideMarkdown(),
     provideClientHydration(),
   ]

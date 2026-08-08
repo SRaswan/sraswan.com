@@ -18,10 +18,11 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npx -p @angular/cli ng build --configuration production --base-href=/sraswan.com/
+      # npm run (not npx ng) so the postbuild step that emits 404.html runs too.
+      - run: npm run build -- --configuration production --base-href=/sraswan.com/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/sraswan-com/browser  # confirm this path
+          path: dist/sraswan-com/browser
   deploy:
     environment:
       name: github-pages

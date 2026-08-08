@@ -42,11 +42,6 @@ export class Blog implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      this.loading = false;
-      return;
-    }
-
     this.http.get<BlogsFile>('./blogs.json').subscribe({
       next: data => {
         this.blogs = [...(data.items || [])].sort((a, b) => {
@@ -68,7 +63,10 @@ export class Blog implements OnInit {
           }
 
           this.loading = false;
-          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+          if (isPlatformBrowser(this.platformId)) {
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+          }
         });
       },
       error: () => {

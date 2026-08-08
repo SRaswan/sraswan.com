@@ -5,7 +5,7 @@ import { Blog } from './blog/blog';
 import { Projects } from './projects/projects';
 import { Resume } from './resume/resume';
 
-const SITE_URL = 'https://sraswan.github.io/sraswan.com';
+import { SITE_URL } from './seo.service';
 
 export const routes: Routes = [
   {

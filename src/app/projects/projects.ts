@@ -1,8 +1,8 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { DatePipe, isPlatformBrowser } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 export interface ProjectsFile {
   lastUpdated?: string;
@@ -38,23 +38,17 @@ export class Projects implements OnInit {
   projectsFile?: ProjectsFile;
   updatedAt?: Date;
 
-  constructor(
-    private http: HttpClient,
-  @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.http.get<ProjectsFile>('./projects.json').subscribe({
-        next: data => {
-          this.projectsFile = data;
-          this.projects = data.items || [];
-          this.updatedAt = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
-          this.loading = false;
-          console.log(this.projects);
-        },
-        error: () => { this.error = 'Failed to load projects'; this.loading = false; }
-      });
-    }
+    this.http.get<ProjectsFile>('./projects.json').subscribe({
+      next: data => {
+        this.projectsFile = data;
+        this.projects = data.items || [];
+        this.updatedAt = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+        this.loading = false;
+      },
+      error: () => { this.error = 'Failed to load projects'; this.loading = false; }
+    });
   }
 }

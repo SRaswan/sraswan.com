@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://sraswan.github.io/sraswan.com/sitemap.xml
+
+# Angular's static output mode emits this empty client-render shell alongside
+# the prerendered pages. Nothing links to it; keep it out of the index.
+Disallow: /index.csr.html
+
+Sitemap: https://sraswan.vercel.app/sitemap.xml

@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
 export interface Role {
@@ -62,16 +62,9 @@ export class About implements OnInit {
   education: Education[] = [];
   experience: Experience[] = [];
 
-  constructor(
-    private http: HttpClient,
-    @Inject(PLATFORM_ID) private platformId: Object,
-  ) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
     this.http.get<AboutFile>('./about.json').subscribe({
       next: (data) => {
         this.profile = data.profile;
