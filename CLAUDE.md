@@ -47,6 +47,12 @@ Bootstrap JS/CSS and Popper are listed in `angular.json` under `scripts`/`styles
 
 The canonical is derived from the live router URL (`SITE_URL` + path + trailing slash), not from route data, so parameterised routes get distinct canonicals instead of all pointing at one URL. The trailing slash matches what static hosts serve for `<route>/index.html`, avoiding a canonical→redirect chain. The tags in `src/index.html` are defaults only; `SeoService` overwrites them per route, including during prerender.
 
+A route can set `seo.noindex: true` to stay out of search results — currently only `blog/:slug`, so individual posts never compete with the About page for "Shaurya Raswan". Such pages emit `robots: noindex, follow` and **no canonical** (the two are contradictory signals), keep their Open Graph tags for link previews, and must be left out of `src/sitemap.xml`. The `/blog` index itself stays indexed. Never express this with `Disallow` in `robots.txt` instead: blocking the crawl stops Google from ever reading the `noindex`, and blocked URLs can still be indexed title-only.
+
+`seo.noimageindex: true` keeps a page's images out of Google Images while the page itself stays indexed (it keeps its canonical). Set on `/blog`, whose post thumbnails would otherwise be indexable even though the posts themselves are `noindex`. The two flags compose: posts carry `noindex, follow, noimageindex`.
+
+`blog/:slug` gets its title/description/image per post from `blog-post-seo.resolver.ts` (`resolve: { seo }`, which overrides a route's static `data.seo`). It has to be a **resolver**, not something the component sets: `NavigationEnd` fires *after* component activation, so a component writing SEO tags in `ngOnInit` gets overwritten by the route's own data a moment later. Resolvers run before activation and work during prerendering.
+
 ### Sidebar animation
 
 The desktop sidebar in `app.html` sets `[attr.data-active-index]` from `App.activeIndex` (updated on `mouseover`). `app.css` uses attribute selectors (`#menu[data-active-index="N"]`) to animate the background image position — no JS animation involved.

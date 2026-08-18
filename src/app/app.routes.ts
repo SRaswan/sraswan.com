@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { About } from './about/about';
 import { Art } from './art/art';
 import { Blog } from './blog/blog';
+import { blogPostSeoResolver } from './blog/blog-post-seo.resolver';
 import { Projects } from './projects/projects';
 import { Resume } from './resume/resume';
 
@@ -29,19 +30,19 @@ export const routes: Routes = [
         title: 'Art — Shaurya Raswan',
         description: 'A gallery of artwork by Shaurya Raswan.',
         url: `${SITE_URL}/art`,
+        // The gallery page stays indexed, but the pieces themselves stay out
+        // of Google Images rather than surfacing untitled next to photos of me.
+        noimageindex: true,
       },
     },
   },
   {
     path: 'blog/:slug',
     component: Blog,
-    data: {
-      seo: {
-        title: 'Blog — Shaurya Raswan',
-        description: 'Long-form writing and notes by Shaurya Raswan.',
-        url: `${SITE_URL}/blog`,
-      },
-    },
+    // Title/description/image come from the post itself; the resolver also
+    // sets noindex, so posts never compete with the About page for
+    // "Shaurya Raswan". The /blog index below is still indexed.
+    resolve: { seo: blogPostSeoResolver },
   },
   {
     path: 'blog',
@@ -51,6 +52,9 @@ export const routes: Routes = [
         title: 'Blog — Shaurya Raswan',
         description: 'Long-form writing and notes by Shaurya Raswan.',
         url: `${SITE_URL}/blog`,
+        // The index stays indexed, but its post thumbnails stay out of Google
+        // Images so they never surface alongside photos of me.
+        noimageindex: true,
       },
     },
   },

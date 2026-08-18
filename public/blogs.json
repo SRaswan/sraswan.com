@@ -6,9 +6,13 @@
       "title": "Fav Music",
       "excerpt": "Just a list of my favorite songs as a starter blog.",
       "date": "2026-03-27",
+      "location": {
+        "name": "G-Store @ UCSD",
+        "address": "UCSD Old Student Center, 9500 Gilman Dr #0323-F, La Jolla, CA 92037"
+      },
       "tags": ["meta", "writing", "music"],
       "image": "imgs/rose.png",
       "markdownFile": "26-03-26.md"
     }
-  ]
+  ] 
 }

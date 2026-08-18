@@ -30,6 +30,9 @@
                 <p class="card-text flex-grow-1 mb-0">{{ blog.excerpt }}</p>
                 <div class="text-muted mb-2">
                   <small>{{ blog.date | date:'longDate' }}</small>
+                  <small class="blog-location" *ngIf="blog.location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ getLocationLabel(blog) }}
+                  </small>
                 </div>
 
                 <div class="mb-2" *ngIf="blog.tags?.length">
@@ -62,7 +65,19 @@
                 <h6 class="blog-detail-excerpt">{{ activeBlog.excerpt }}</h6>
 
                 <div class="text-muted">
-                  <h6>{{ activeBlog.date | date:'longDate' }}</h6>
+                  <h6>
+                    {{ activeBlog.date | date:'longDate' }}
+                    <a
+                      class="blog-location blog-location-link"
+                      *ngIf="activeBlog.location"
+                      [href]="getLocationUrl(activeBlog)"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Open in Google Maps"
+                    >
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ getLocationLabel(activeBlog) }}
+                    </a>
+                  </h6>
                 </div>
 
                 <h6 class="" *ngIf="activeBlog.tags?.length">

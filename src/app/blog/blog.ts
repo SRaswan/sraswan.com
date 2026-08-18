@@ -4,11 +4,21 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 
+export interface BlogLocation {
+  /** Short display name, e.g. "General Store Co-op". */
+  name: string;
+  /** Full address, used to build the map link when `url` is absent. */
+  address?: string;
+  /** Explicit map link; overrides the generated Google Maps search. */
+  url?: string;
+}
+
 export interface BlogItem {
   slug: string;
   title: string;
   excerpt: string;
   date: string;
+  location?: string | BlogLocation;
   tags?: string[];
   image?: string;
   markdownFile: string;
@@ -78,6 +88,36 @@ export class Blog implements OnInit {
 
   getMarkdownPath(item: BlogItem): string {
     return `./blog/${item.markdownFile}`;
+  }
+
+  /** Text shown next to the pin: the short name, or the plain string form. */
+  getLocationLabel(item: BlogItem): string {
+    if (!item.location) {
+      return '';
+    }
+    return typeof item.location === 'string' ? item.location : item.location.name;
+  }
+
+  /** Explicit `url` if given, otherwise a Google Maps search for name + address. */
+  getLocationUrl(item: BlogItem): string {
+    if (!item.location) {
+      return '';
+    }
+
+    if (typeof item.location === 'string') {
+      return this.mapsSearchUrl(item.location);
+    }
+
+    if (item.location.url) {
+      return item.location.url;
+    }
+
+    const query = [item.location.name, item.location.address].filter(Boolean).join(', ');
+    return this.mapsSearchUrl(query);
+  }
+
+  private mapsSearchUrl(query: string): string {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   }
 
   async copyCurrentPostUrl(): Promise<void> {

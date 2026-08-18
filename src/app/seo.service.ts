@@ -9,6 +9,19 @@ export interface SeoData {
   description: string;
   image?: string;
   url?: string;
+  /**
+   * Keep the page out of search results. It stays crawlable and its links are
+   * still followed, so link equity flows on to the rest of the site — it just
+   * never appears as a result itself. Such a page also gets no canonical:
+   * "don't index me" and "here is my canonical URL" are contradictory signals.
+   */
+  noindex?: boolean;
+  /**
+   * Keep this page's images out of Google Images while the page itself stays
+   * indexed. Used on `/blog`, which lists post thumbnails: the posts are
+   * already `noindex`, but the index that displays their images is not.
+   */
+  noimageindex?: boolean;
 }
 
 /**
@@ -77,25 +90,53 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:title', content: seo.title });
     this.meta.updateTag({ name: 'twitter:description', content: seo.description });
 
+    // Open Graph stays on noindex pages: it drives link previews when the post
+    // is shared, which is unrelated to whether search engines index it.
     if (seo.image) {
       const image = absolute(seo.image);
       this.meta.updateTag({ property: 'og:image', content: image });
       this.meta.updateTag({ name: 'twitter:image', content: image });
     }
 
-    this.setCanonical(canonical);
-  }
-
-  private setCanonical(href: string): void {
-    let link = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-
-    if (!link) {
-      link = this.document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      this.document.head.appendChild(link);
+    const directives: string[] = [];
+    if (seo.noindex) {
+      directives.push('noindex', 'follow');
+    }
+    if (seo.noimageindex) {
+      directives.push('noimageindex');
     }
 
-    link.setAttribute('href', href);
+    // The removeTag branch matters as much as the set one — client-side
+    // navigation reuses the same <head>, so a stale tag would leak onto the
+    // next page.
+    if (directives.length) {
+      this.meta.updateTag({ name: 'robots', content: directives.join(', ') });
+    } else {
+      this.meta.removeTag('name="robots"');
+    }
+
+    // Only noindex drops the canonical. A noimageindex page is still indexed
+    // and still needs one.
+    this.setCanonical(seo.noindex ? undefined : canonical);
+  }
+
+  private setCanonical(href: string | undefined): void {
+    const link = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+
+    if (!href) {
+      link?.remove();
+      return;
+    }
+
+    if (link) {
+      link.setAttribute('href', href);
+      return;
+    }
+
+    const created = this.document.createElement('link');
+    created.setAttribute('rel', 'canonical');
+    created.setAttribute('href', href);
+    this.document.head.appendChild(created);
   }
 }
 

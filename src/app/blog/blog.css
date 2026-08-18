@@ -11,6 +11,29 @@
 	transform: translateY(-4px);
 }
 
+.blog-location {
+	margin-left: 0.55rem;
+	padding-left: 0.55rem;
+	border-left: 1px solid rgba(160, 174, 192, 0.4);
+	white-space: nowrap;
+}
+
+.blog-location i {
+	margin-right: 0.3rem;
+	opacity: 0.75;
+}
+
+.blog-location-link {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.blog-location-link:hover,
+.blog-location-link:focus-visible {
+	color: #cfd8e3;
+}
+
 .blog-tag {
 	background-color: #4a5568;
 	color: #e2e8f0;
