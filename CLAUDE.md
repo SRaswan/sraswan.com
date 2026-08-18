@@ -17,7 +17,8 @@ npm run build && npx http-server dist/sraswan-com/browser -p 4200 -c-1
 ## Deployment
 
 Pushing to `main` triggers two automatic deploys:
-- **Vercel** (`sraswan.vercel.app`) — **the canonical host.** Reads `vercel.json`; output is `dist/sraswan-com/browser`. `trailingSlash: true` matches the prerendered `<route>/index.html` layout, and there is deliberately **no catch-all rewrite** — every route is a real file, so unknown paths fall through to `404.html` with a genuine 404 status instead of a soft-200 homepage.
+- **Vercel** (`sraswan.vercel.app`) — **the canonical host.** Reads `vercel.json`; output is `dist/sraswan-com/browser`. `trailingSlash: true` matches the prerendered `<route>/index.html` layout.
+  The catch-all rewrite points at **`/404.html`, not `/index.html`**. Rewrites are evaluated after the filesystem, so every prerendered page and asset still wins; only genuinely missing paths hit it. This is load-bearing: without an explicit rewrite Vercel falls back to `index.html` on its own, which served the **homepage** at every bogus URL — a soft 404. Verified by contrast: the identical build 404s correctly on GitHub Pages, so the fallback is Vercel's, not the build's. A rewrite cannot set a status code, so these still return 200; what keeps them out of the index is the `noindex` that `scripts/emit-404.mjs` bakes into `404.html`. **Never point this rewrite at `/index.html`.**
 - **GitHub Pages** (`sraswan.github.io/sraswan.com`) — `.github/workflows/gh-pages.yml`; built with `--base-href=/sraswan.com/`. A secondary copy that canonicalises back to Vercel, so search engines consolidate onto the Vercel URL. Safe to disable without affecting SEO.
 
 The public address is defined once, as `SITE_URL` in `src/app/seo.service.ts` (re-exported to `app.routes.ts`). Moving to a custom domain means changing that line plus `src/robots.txt` and `src/sitemap.xml`.

@@ -3,5 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/sraswan-com/browser",
   "trailingSlash": true,
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [{ "source": "/(.*)", "destination": "/404.html" }]
 }
