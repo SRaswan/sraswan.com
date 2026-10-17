@@ -5,7 +5,7 @@
   {
     "title": "An Incremental Approach to JIT Construction",
     "skills": ["Compilers", "JIT Compilation", "Functional Programming", "Scheme", "Rust", "x86", "Research", "CS Education"],
-    "description": "First author and speaker at ACM Scheme '26 for my pedagogic paper on an new, incremental approach to constructing just-in-time compilers. Includes a REPL and type specialization. Co-located with ICFP at IU Indianapolis.",
+    "description": "First author and speaker at ACM Scheme '26 for my pedagogic paper on a new, incremental approach to constructing just-in-time compilers. Includes a REPL and type specialization. Co-located with ICFP at IU Indianapolis.",
     "image": "proj/scheme.png",
     "featured": true,
     "links": [
@@ -17,7 +17,7 @@
   {
     "title": "Agentic RAG System for Documentation",
     "skills": ["Agents", "RAG", "Context Engineering", "LoRA SFT", "SentenceTransformers", "HuggingFace", "LangChain"],
-    "description": "Comprehensive reasoning RAG system for RapidFire AI documentation. Semantic chuncking, retrieval, cross-encoding, and parallelization workflow to a final LoRA SFT generator for domain adaptation. Evaluated with reference-based metrics and LLM-as-Judge. Used RapidFire AI's expiriment wrapper for grid search of configs.",
+    "description": "Comprehensive reasoning RAG system for RapidFire AI documentation. Semantic chunking, retrieval, cross-encoding, and parallelization workflow to a final LoRA SFT generator for domain adaptation. Evaluated with reference-based metrics and LLM-as-Judge. Used RapidFire AI's experiment wrapper for grid search of configs.",
     "image": "proj/rapidfireai.png",
     "blogUrl": "",
     "links": [
@@ -123,7 +123,7 @@
   {
     "title": "SigPytch",
     "skills": ["LSTM", "Financial metrics", "DCF", "Python", "Pandas"],
-    "description": "Open source PyPi Python library for financial forcasting and metrics. Used to support our student-led investment fund and their pitches to CFA judges on stock analysis.",
+    "description": "Open source PyPi Python library for financial forecasting and metrics. Used to support our student-led investment fund and their pitches to CFA judges on stock analysis.",
     "image": "proj/rolling.png",
     "blogUrl": "",
     "links": [
