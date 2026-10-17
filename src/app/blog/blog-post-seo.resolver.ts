@@ -42,10 +42,6 @@ export const blogPostSeoResolver: ResolveFn<SeoData> = (route) => {
           title: `${post.title} — Shaurya Raswan`,
           description: post.excerpt || FALLBACK.description,
           image: post.image,
-          // Posts stay out of search results; this metadata is for the browser
-          // tab and for link previews when a post is shared. noimageindex is
-          // belt-and-braces: a noindex page has no landing page for its images
-          // anyway, but this states the intent rather than relying on it.
           noindex: true,
           noimageindex: true,
         } satisfies SeoData;

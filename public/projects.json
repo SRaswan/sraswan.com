@@ -3,6 +3,17 @@
 "items": [
 
   {
+    "title": "An Incremental Approach to JIT Construction",
+    "skills": ["Compiler Construction", "JIT Compilation", "Programming Languages", "Scheme", "Rust", "Research"],
+    "description": "ACM Scheme '26 research paper on an incremental approach to constructing just-in-time compilers. Co-authored with Mark Barbone, Nico Lehmann, and Joe Gibbs Politz.",
+    "image": "https://i.ytimg.com/vi/8qwXgappTWQ/hqdefault.jpg",
+    "links": [
+      { "label": "ACM Paper", "url": "https://dl.acm.org/doi/10.1145/3830440.3832304" },
+      { "label": "DOI", "url": "https://doi.org/10.1145/3830440.3832304" },
+      { "label": "Talk", "url": "https://www.youtube.com/watch?v=8qwXgappTWQ" }
+    ]
+  },
+  {
     "title": "Agentic RAG System for Documentation",
     "skills": ["Agents", "RAG", "Context Engineering", "LoRA SFT", "SentenceTransformers", "HuggingFace", "LangChain"],
     "description": "Comprehensive reasoning RAG system for RapidFire AI documentation. Semantic chuncking, retrieval, cross-encoding, and parallelization workflow to a final LoRA SFT generator for domain adaptation. Evaluated with reference-based metrics and LLM-as-Judge. Used RapidFire AI's expiriment wrapper for grid search of configs.",
