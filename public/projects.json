@@ -26,15 +26,16 @@
   },
   {
     "title": "BurnMark",
-    "skills": ["Rust", "Fuzzing", "Automatic Differentiation", "LLM Agents", "Cranelift", "Benchmarking"],
-    "description": "First Rust fuzzing harness for automatic differentiation in deep learning libraries. Fixed 16 bugs in popular frameworks, mainly FFI boundary and computational graph construction issues. Also fuzzed ad_trait and evalexpr-jit. Benchmarking Rust LLM agents with different backends (Candle, Burn, native PyTorch).",
+    "skills": ["Rust", "Agentic Fuzzing", "Automatic Differentiation", "LLM Agents", "Stacked PRs", "Cranelift", "Benchmarking"],
+    "description": "First agentic loop fuzzer for Rust automatic-differentiation libraries: generate failures, diagnose and implement fixes, manage stacked pull requests, then fuzz again. Supports all Burn backends, Candle, tch-rs. Helped me merge real correctness fixes into Burn and its SIMD library Macerator, as well as other Rust AD libraries.",
     "image": "proj/burnmark.png",
     "blogUrl": "",
     "links": [
-      { "label": "Paper 1", "url": "research/burnmark.pdf" },
       { "label": "GitHub 1", "url": "https://github.com/SRaswan/burnmark" },
-      { "label": "Paper 2", "url": "research/ad_rust.pdf" },
-            { "label": "GitHub 2", "url": "https://github.com/pyreking/cse291y" }
+      { "label": "Paper 1", "url": "research/burnmark.pdf" },
+      { "label": "GitHub 2", "url": "https://github.com/pyreking/cse291y" },
+      { "label": "Paper 2", "url": "research/ad_rust.pdf" }
+
     ]
   },
   {

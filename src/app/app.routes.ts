@@ -15,7 +15,7 @@ export const routes: Routes = [
     data: {
       seo: {
         title: 'Shaurya Raswan - Software Engineer / UCSD Student',
-        description: 'Portfolio, projects, art, and blog by Shaurya Raswan.',
+        description: 'Shaurya Raswan is a software engineer working on Rust, compiler construction, JIT compilers, parallel architectures, and agentic fuzzing for automatic differentiation libraries.',
         image: `${SITE_URL}/imgs/pfp.png`,
         url: `${SITE_URL}/`,
       },
