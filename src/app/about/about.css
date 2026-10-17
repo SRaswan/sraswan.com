@@ -15,6 +15,10 @@
   border-radius: 3%;
 }
 
+.education-detail {
+  padding-left: 1.5em;
+}
+
 
 .profile-image {
   width: clamp(9rem, 24vw, 14rem);

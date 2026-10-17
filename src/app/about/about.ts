@@ -27,6 +27,12 @@ export interface Education {
   note?: string;
   period: string;
   location: string;
+  links?: EducationLink[];
+}
+
+export interface EducationLink {
+  label: string;
+  url: string;
 }
 
 export interface ExperienceDetail {

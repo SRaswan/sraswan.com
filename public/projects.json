@@ -4,13 +4,13 @@
 
   {
     "title": "An Incremental Approach to JIT Construction",
-    "skills": ["Compiler Construction", "JIT Compilation", "Programming Languages", "Scheme", "Rust", "Research"],
-    "description": "ACM Scheme '26 research paper on an incremental approach to constructing just-in-time compilers. Co-authored with Mark Barbone, Nico Lehmann, and Joe Gibbs Politz.",
+    "skills": ["Compilers", "JIT Compilation", "Programming Languages", "Scheme", "Rust", "x86", "Research"],
+    "description": "First author and speaker at ACM Scheme '26 for my pedagogic paper on an new, incremental approach to constructing just-in-time compilers. Includes a REPL and type specialization. Co-located with ICFP at IU Indianapolis.",
     "image": "https://i.ytimg.com/vi/8qwXgappTWQ/hqdefault.jpg",
     "links": [
       { "label": "ACM Paper", "url": "https://dl.acm.org/doi/10.1145/3830440.3832304" },
-      { "label": "DOI", "url": "https://doi.org/10.1145/3830440.3832304" },
-      { "label": "Talk", "url": "https://www.youtube.com/watch?v=8qwXgappTWQ" }
+      { "label": "Recording", "url": "https://www.youtube.com/watch?v=8qwXgappTWQ" },
+      { "label": "Code", "url": "https://github.com/compilers-course-materials/incremental-jit" }
     ]
   },
   {

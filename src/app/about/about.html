@@ -49,7 +49,10 @@
                 <div class="d-flex justify-content-between align-items-start">
                   <div>
                     <div>{{ edu.school }}</div>
-                    <div class="fs-6" style="color: #dbe2ff;" *ngIf="edu.note">&#8195;~ {{ edu.note }}</div>
+                    <div class="fs-6 education-detail" style="color: #dbe2ff;" *ngIf="edu.note">~ {{ edu.note }}</div>
+                    <div class="fs-6 education-detail" style="color: #dbe2ff;" *ngFor="let link of edu.links">
+                      ~ <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+                    </div>
                   </div>
                   <div class="fs-6 mt-2 text-end">
                     <div>{{ edu.period }}</div>
