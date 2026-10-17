@@ -1,12 +1,13 @@
 {
-"lastUpdated": "2026-03-26T00:00:00Z",
+"lastUpdated": "2026-10-16T00:00:00Z",
 "items": [
 
   {
     "title": "An Incremental Approach to JIT Construction",
-    "skills": ["Compilers", "JIT Compilation", "Programming Languages", "Scheme", "Rust", "x86", "Research"],
+    "skills": ["Compilers", "JIT Compilation", "Functional Programming", "Scheme", "Rust", "x86", "Research", "CS Education"],
     "description": "First author and speaker at ACM Scheme '26 for my pedagogic paper on an new, incremental approach to constructing just-in-time compilers. Includes a REPL and type specialization. Co-located with ICFP at IU Indianapolis.",
     "image": "proj/scheme.png",
+    "featured": true,
     "links": [
       { "label": "ACM Paper", "url": "https://dl.acm.org/doi/10.1145/3830440.3832304" },
       { "label": "Recording", "url": "https://www.youtube.com/watch?v=8qwXgappTWQ" },
@@ -26,9 +27,10 @@
   },
   {
     "title": "BurnMark",
-    "skills": ["Rust", "Agentic Fuzzing", "Automatic Differentiation", "LLM Agents", "Stacked PRs", "Cranelift", "Benchmarking"],
+    "skills": ["Rust", "Agentic Fuzzing", "Automatic Differentiation", "LLM Agents", "AST", "Cranelift", "Open-Source"],
     "description": "First agentic loop fuzzer for Rust automatic-differentiation libraries: generate failures, diagnose and implement fixes, manage stacked pull requests, then fuzz again. Supports all Burn backends, Candle, tch-rs. Helped me merge real correctness fixes into Burn and its SIMD library Macerator, as well as other Rust AD libraries.",
     "image": "proj/burnmark.png",
+    "featured": true,
     "blogUrl": "",
     "links": [
       { "label": "GitHub 1", "url": "https://github.com/SRaswan/burnmark" },
@@ -65,6 +67,7 @@
     "skills": ["React Native", "TensorFlow", "LSTM","OpenCV", "Flask", "MediaPipe"],
     "description": "1st place Winner at CruzHacks 2024. Mobile app that translates American Sign Language (ASL) using computer vision and LSTMs. Trained and recorded dataset ourselves!",
     "image": "proj/signsight.png",
+    "featured": true,
     "blogUrl": "",
     "links": [
       { "label": "News", "url": "https://www.santacruzworks.org/news/signsight-a-computer-vision-asl-translator" },
@@ -133,8 +136,10 @@
         {
     "title": "On-site vs Off-site Solar at UCSD",
     "skills": ["Python", "Excel", "Field Work", "Data Analysis", "Student Engagement", "Research"],
-    "description": "Bonnie Reiss Fellowship for exploring solar cost and production at UCSD for the 2024 Salas O'Brien study.",
+    "description": "Bonnie Reiss Fellowship for exploring solar cost and production at UCSD for the 2024 Salas O'Brien study. $4,000 scholarship.",
     "image": "proj/windmill.png",
+        "featured": true,
+
     "blogUrl": "",
     "links": [
       { "label": "Poster", "url": "https://drive.google.com/file/d/1PYOB8MxL5rhbnW73STBZsLm-UZwFMUUN/view?usp=sharing" }
@@ -144,8 +149,10 @@
   {
     "title": "Eutrophication in Orange County: LEGO Spectrophotometer",
     "skills": ["ImageJ", "Spectrophotometry", "Field Work", "Data Analysis", "Research"],
-    "description": "1st place for Beckman Legacy Award scholarship. LEGO-based spectrophotometer for measuring water quality in OC.",
+    "description": "1st place for Beckman Legacy Award scholarship. LEGO-based spectrophotometer for measuring water quality in OC. $16,000 scholarship.",
     "image": "proj/plants.png",
+        "featured": true,
+
     "links": [
       { "label": "News", "url": "https://iusd.org/article/iusd-students-receive-five-six-beckman-legacy-awards"}
     ]

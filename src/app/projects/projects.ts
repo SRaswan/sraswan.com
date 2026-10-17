@@ -19,6 +19,7 @@ export interface Project {
   skills: string[];
   description: string;
   image: string;
+  featured?: boolean;
   blogUrl?: string;
   links?: ProjectLink[];
 }

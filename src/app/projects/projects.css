@@ -15,6 +15,17 @@
   background-color: #99caff21;
 }
 
+.featured-project {
+  border-color: #f0c36a;
+  border-width: 2px;
+  background: linear-gradient(145deg, rgba(240, 195, 106, 0.16), rgba(153, 202, 255, 0.1));
+  box-shadow: 0 0 0 1px rgba(240, 195, 106, 0.35), 0 8px 24px rgba(240, 195, 106, 0.12);
+}
+
+.project-image-wrap {
+  position: relative;
+}
+
 .card:hover {
 	transform: translateY(-4px);
 }
